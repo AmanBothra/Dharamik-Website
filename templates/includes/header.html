@@ -1,0 +1,74 @@
+{% load static %}
+
+<header class="fixed-header">
+    <!-- logo start -->
+    <div class="header-logo js-midnight-color js-headroom">
+        <div class="hidden-box">
+            <a href="{% url 'home-page' %}" class="header-logo__box js-pointer-large js-animsition-link">
+                <img style="width: 150px; height: 50px" class="header-logo__img white"
+                    src="{% static 'images/dharamik.png' %}" alt="logo" />
+                <img style="width: 150px; height: 50px" class="header-logo__img black"
+                    src="{% static 'images/dharamik.png' %}" alt="logo" />
+            </a>
+        </div>
+    </div>
+    <!-- logo end -->
+
+    <!-- menu-icon start -->
+    <div class="menu-icon js-menu-open-close js-pointer-large js-midnight-color js-headroom">
+        <div class="menu-icon__box">
+            <span class="menu-icon__inner"></span>
+            <span class="menu-icon__close"></span>
+        </div>
+    </div>
+    <!-- menu-icon end -->
+
+    <!-- header-social start -->
+    <div class="header-social after-preloader-anim js-midnight-color js-headroom">
+        <ul class="list list_center list_margin-20px hidden-box">
+            <li class="list__item">
+                <div class="hidden-box d-inline-block">
+                    <a href="#" class="anim-slide js-pointer-small">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="list__item">
+                <div class="hidden-box d-inline-block">
+                    <a href="#" class="anim-slide tr-delay-02 js-pointer-small">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="list__item">
+                <div class="hidden-box d-inline-block">
+                    <a href="#" class="anim-slide tr-delay-04 js-pointer-small">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="list__item">
+                <div class="hidden-box d-inline-block">
+                    <a href="#" class="anim-slide tr-delay-06 js-pointer-small">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="list__item">
+                <div class="hidden-box d-inline-block">
+                    <a href="#" class="anim-slide tr-delay-08 js-pointer-small">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="list__item">
+                <div class="hidden-box d-inline-block">
+                    <a href="#" class="anim-slide tr-delay-10 js-pointer-small">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- header-social end -->
+</header>
