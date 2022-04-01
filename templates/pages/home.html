@@ -12,10 +12,10 @@
 <!-- main start -->
 <main class="js-animsition-overlay" data-animsition-overlay="true">
 	<!-- page head start -->
-	<section id="up" class="pos-rel bg-img-cover" style="background-image: url(assets/images/backgrounds/dj.jpg)">
+	{% for banner in video_banner  %}
+	<section id="up" class="pos-rel bg-img-cover" style="background-image: url({{banner.image.url}})">
 		<!-- video -->
-		<video src="http://www.nurseitmukaytegin.com/envato-templates/videos/dj.mp4" class="video-bg" muted loop
-			autoplay playsinline></video>
+		<video src="{{banner.video.url}}" class="video-bg" muted loop autoplay playsinline></video>
 		<!-- bg-overlay -->
 		<div class="bg-overlay-black"></div>
 		<!-- pos-rel start -->
@@ -23,24 +23,28 @@
 			<div class="padding-top-bottom-120 container small after-preloader-anim">
 				<!-- title start -->
 				<h2 class="headline-xxxxl hidden-box">
-					<span class="anim-slide">Electro Party</span>
+					<span class="anim-slide">{{banner.title}}</span>
 				</h2>
 				<!-- title end -->
 				<p class="subhead-m margin-top-20 anim-fade tr-delay-01">
-					Pitchfork green juice meh ethical slow-carb poke authentic salvia
-					skateboard helvetica tousled bicycle rights ennui.
+					{{banner.short_description}}
 				</p>
+
+				{% if banner.button_title %}
 				<div class="margin-top-30 anim-fade tr-delay-02">
-					<a href="#" class="border-btn js-pointer-large">
-						<span class="border-btn__inner">Contact me</span>
+					<a href="{{banner.url}}" class="border-btn js-pointer-large">
+						<span class="border-btn__inner">{{banner.button_title}}</span>
 						<span class="border-btn__lines-1"></span>
 						<span class="border-btn__lines-2"></span>
 					</a>
 				</div>
+				{% endif %}
 			</div>
 		</div>
 		<!-- pos-rel end -->
 	</section>
+	{% endfor %}
+
 	<!-- page head end -->
 </main>
 <!-- main end -->
@@ -50,13 +54,14 @@
 	<!-- pos-rel start -->
 	<div class="pos-rel flex-min-height-100vh">
 		<!-- container start -->
+		{% for obj in about  %}
 		<div class="container padding-top-100 padding-bottom-120">
 			<!-- flex-container start -->
 			<div class="flex-container">
 				<!-- column start -->
 				<div class="four-columns column-100-100 padding-top-20">
 					<h2 class="headline-s hidden-box js-scrollanim">
-						<span class="anim-slide">Polyethylene</span>
+						<span class="anim-slide">{{obj.title}}</span>
 					</h2>
 				</div>
 				<!-- column end -->
@@ -71,14 +76,11 @@
 			<div class="flex-container flex-align-center padding-top-60">
 				<!-- column start -->
 				<div class="six-columns column-100-100 padding-top-30">
-					<a href="project_drone.html"
-						class="d-block hidden-box hover-box js-pointer-large js-animsition-link">
-						<div class="anim-fade js-scrollanim">
-							<img class="img-hover-scale"
-								src="assets/images/projects/polyethylene/woman-behind-a-plastic-3645513.jpg"
-								alt="New album" />
-						</div>
-					</a>
+					<div class="anim-fade js-scrollanim">
+						<img class="img-hover-scale"
+							src="{{obj.image.url}}"
+							alt="New album" />
+					</div>
 				</div>
 				<!-- column end -->
 
@@ -88,12 +90,7 @@
 						<div class="eight-columns column-100-100">
 							<div class="">
 								<p class="body-text-m anim-text-reveal js-scrollanim">
-									Retro jean shorts cronut lumbersexual mixtape hella you
-									probably haven't heard of them austin williamsburg af mustache
-									pinterest. Mixtape kinfolk cray, wolf palo santo brunch
-									iPhone. 3 wolf moon microdosing scenester, tilde roof party
-									affogato typewriter celiac echo park craft beer bicycle rights
-									man braid trust fund four dollar toast gentrify.
+									{{obj.description}}
 								</p>
 							</div>
 						</div>
@@ -101,10 +98,9 @@
 						<!-- list start -->
 						<ul class="list list_row list_margin-20px padding-top-30">
 							<li class="list__item">
-								<a href="#" class="border-btn js-pointer-large">
-									<span class="border-btn__inner"><i class="fab fa-apple"></i>More info</span>
-									<span class="border-btn__lines-1"></span>
-									<span class="border-btn__lines-2"></span>
+								<a href="{% url 'about-page' %}" class="border-btn js-pointer-large">
+									<span class="border-btn__inner"><i class="fa fa-info-circle" aria-hidden="true"></i>
+										Learn more</span>
 								</a>
 							</li>
 						</ul>
@@ -115,237 +111,12 @@
 			</div>
 			<!-- flex-container end -->
 		</div>
+		{% endfor %}
 		<!-- container end -->
 	</div>
 	<!-- pos-rel end -->
 </section>
 <!-- about end   -->
-
-<!-- skills start -->
-<section class="pos-rel section-bg-light-1" data-midnight="black">
-	<!-- pos-rel start -->
-	<div class="pos-rel flex-min-height-100vh">
-		<!-- container start -->
-		<div class="container padding-top-bottom-120">
-			<h2 class="headline-xxs text-color-black hidden-box">
-				<span class="anim-slide js-scrollanim">Artisan wolf copper mug raw denim</span>
-			</h2>
-
-			<!-- flex-container start -->
-			<div class="flex-container padding-top-30">
-				<!-- column start -->
-				<div class="four-columns column-100-100 padding-top-60">
-					<div class="column-r-margin-40-999">
-						<!-- list start -->
-						<ul class="list list_margin-20px text-color-6d6d6d js-scrollanim">
-							<li class="list__item dot black hidden-box">
-								<button class="subhead-xs anim-slide">2019</button>
-							</li>
-							<li class="list__item dot black hidden-box">
-								<button class="subhead-xs anim-slide tr-delay-01">
-									2020
-								</button>
-							</li>
-							<li class="list__item dot black hidden-box">
-								<button class="subhead-xs anim-slide tr-delay-02">
-									2021
-								</button>
-							</li>
-							<li class="list__item dot black hidden-box">
-								<button class="subhead-xs anim-slide tr-delay-03">
-									2022
-								</button>
-							</li>
-
-						</ul>
-						<!-- list end -->
-					</div>
-				</div>
-				<!-- column end -->
-
-				<div class="eight-columns column-100-100 padding-top-60">
-					<!-- <p class="body-text-l text-color-black anim-text-reveal js-scrollanim">Brunch vinyl DIY crucifix taxidermy affogato cred selvage quinoa direct trade keytar sustainable shabby chic intelligentsia kombucha. Blog shoreditch food truck aesthetic. Artisan wolf copper mug raw denim, green juice cardigan listicle paleo la croix live-edge four dollar toast sartorial mustache banh mi mlkshk. Hexagon hella four dollar toast +1 gentrify farm-to-table. IPhone franzen portland cardigan fixie blog.</p> -->
-					<!-- list start -->
-
-					<ul class="list list_margin-20px padding-top-60 js-scrollanim">
-						<h1 class="profit_text"><span>Pro</span>fit</h1>
-						<h1 class="profit_texth1">20<span>19</span></h1>
-
-						<!-- progress-box start -->
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill" data-text="January">
-								January
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-02"
-								data-text="97%">
-								97%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="97%">
-								<div class="progress-bar__line black js-progress-animate"></div>
-							</div>
-						</li>
-						<!-- progress-box end -->
-
-						<!-- progress-box start -->
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-01"
-								data-text="February">
-								February
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-03"
-								data-text="93%">
-								93%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="93%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-01"></div>
-							</div>
-						</li>
-						<!-- progress-box end -->
-
-						<!-- progress-box start -->
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-02" data-text="March">
-								March
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04"
-								data-text="100%">
-								100%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="100%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-02"></div>
-							</div>
-						</li>
-						<!-- progress-box end -->
-
-						<!-- progress-box start -->
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-03" data-text="April">
-								April
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-05"
-								data-text="98%">
-								98%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="98%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-03"></div>
-							</div>
-						</li>
-						<!-- progress-box end -->
-
-						<!-- progress-box start -->
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04" data-text="May">
-								May
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-06"
-								data-text="86%">
-								86%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="86%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-04"></div>
-							</div>
-						</li>
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04" data-text="June">
-								June
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-06"
-								data-text="86%">
-								86%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="86%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-04"></div>
-							</div>
-						</li>
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04" data-text="July">
-								July
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-06"
-								data-text="86%">
-								86%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="86%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-04"></div>
-							</div>
-						</li>
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04" data-text="August">
-								August
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-06"
-								data-text="86%">
-								86%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="86%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-04"></div>
-							</div>
-						</li>
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04"
-								data-text="September">
-								September
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-06"
-								data-text="86%">
-								86%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="86%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-04"></div>
-							</div>
-						</li>
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04"
-								data-text="October">
-								October
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-06"
-								data-text="86%">
-								86%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="86%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-04"></div>
-							</div>
-						</li>
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04"
-								data-text="November">
-								November
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-06"
-								data-text="86%">
-								86%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="86%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-04"></div>
-							</div>
-						</li>
-						<li class="list__item progress-bar">
-							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-04"
-								data-text="December">
-								December
-							</div>
-							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-06"
-								data-text="86%">
-								86%
-							</div>
-							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="86%">
-								<div class="progress-bar__line black js-progress-animate tr-delay-04"></div>
-							</div>
-						</li>
-						<!-- progress-box end -->
-					</ul>
-					<!-- list end -->
-				</div>
-
-			</div>
-			<!-- flex-container end -->
-		</div>
-		<!-- container end -->
-	</div>
-	<!-- pos-rel end -->
-</section>
-<!-- skills end -->
 
 <!-- image Sliders start  -->
 
@@ -360,11 +131,10 @@
 				<h2 class="column-l-r-margin-10 headline-m js-scrollanim">
 					<span class="hidden-box d-block">
 						<span class="anim-slide">
-							We Are <span class="text-color-red">Creative</span>
-						</span>
+							Membership </span>
 					</span>
 					<span class="hidden-box d-block">
-						<span class="anim-slide tr-delay-01 text-color-red">People</span>
+						<span class="anim-slide tr-delay-01 text-color-red">Perks</span>
 					</span>
 				</h2>
 				<!-- title end -->
@@ -374,51 +144,23 @@
 			<!-- column start -->
 			<div class="six-columns padding-bottom-20">
 				<div class="column-l-r-margin-10">
+					{% for obj in membership_perks %}
 					<p class="body-text-s anim-text-reveal js-scrollanim">
-						Pitchfork vaporware hella, vice next level art party subway tile
-						swag portland. Cliche authentic photo booth, seitan sartorial
-						iPhone brooklyn bicycle rights whatever small batch selvage
-						affogato yuccie adaptogen vinyl. Sartorial franzen tacos
-						cardigan, offal gluten-free pour-over snackwave plaid four
-						dollar toast. Messenger bag keffiyeh church-key, synth iPhone
-						pabst leggings ethical. PBR&B cred hot chicken pork belly.
+						{% autoescape off %}
+						{{ obj.description|safe|escape }}
+						{% endautoescape %}
 					</p>
+					{% endfor %}
+
 
 					<!-- list start -->
 					<ul class="list text-color-dadada margin-top-30 js-scrollanim">
+						{% for points in key_points %}
 						<li class="list__item red dot hidden-box">
-							<div class="subhead-xxs anim-slide">Graphic Design</div>
+							<div class="subhead-xxs anim-slide">{{points.key_points}}</div>
 						</li>
-						<li class="list__item red dot hidden-box">
-							<div class="subhead-xxs anim-slide tr-delay-01">
-								User Interface Design
-							</div>
-						</li>
-						<li class="list__item red dot hidden-box">
-							<div class="subhead-xxs anim-slide tr-delay-02">
-								User Experience Design
-							</div>
-						</li>
-						<li class="list__item red dot hidden-box">
-							<div class="subhead-xxs anim-slide tr-delay-03">
-								Web Design
-							</div>
-						</li>
-						<li class="list__item red dot hidden-box">
-							<div class="subhead-xxs anim-slide tr-delay-04">
-								Motion Design
-							</div>
-						</li>
-						<li class="list__item red dot hidden-box">
-							<div class="subhead-xxs anim-slide tr-delay-05">
-								Front-end Development
-							</div>
-						</li>
-						<li class="list__item red dot hidden-box">
-							<div class="subhead-xxs anim-slide tr-delay-06">
-								Back-end Development
-							</div>
-						</li>
+						{% endfor %}
+
 					</ul>
 					<!-- list end -->
 				</div>
@@ -432,68 +174,13 @@
 			<!-- swiper-wrapper start -->
 			<div class="swiper-wrapper">
 				<!-- swiper-slide start -->
+				{% for screenshot in profit_screenshot %}
 				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/people-holding-their-phones-3184435.jpg"
+					<img src="{{screenshot.image.url}}"
 						alt="About us" />
 				</div>
-				<!-- swiper-slide end -->
+				{% endfor %}
 
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/fashion-people-woman-girl-3979213.jpg" alt="About us" />
-					<img class="padding-top-20" src="assets/images/about/about_slider/men-writing-on-board-3184633.jpg"
-						alt="About us" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/man-people-desk-laptop-3931391.jpg" alt="About us" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/photo-of-man-using-smartphone-3183191.jpg"
-						alt="About us" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/fashion-woman-girl-cute-3979116.jpg" alt="About us" />
-					<img class="padding-top-20"
-						src="assets/images/about/about_slider/fashion-man-people-school-3799830.jpg" alt="About us" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/women-using-computers-3184348.jpg" alt="About us" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/man-wearing-purple-long-sleeved-shirt-looking-at-the-ipad-3184326.jpg"
-						alt="About us" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/women-s-white-framed-sunglasses-2690323.jpg"
-						alt="About us" />
-					<img class="padding-top-20"
-						src="assets/images/about/about_slider/fashion-man-sunglasses-people-3965233.jpg"
-						alt="About us" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<img src="assets/images/about/about_slider/fashion-woman-girl-cute-3979104.jpg" alt="About us" />
-				</div>
 				<!-- swiper-slide end -->
 			</div>
 			<!-- swiper-wrapper end -->
@@ -513,7 +200,7 @@
 		<!-- title start -->
 		<h2 class="headline-xxl text-center js-scrollanim hidden-box">
 			<span class="anim-slide">
-				Our <span class="text-color-red">Creative</span> Team
+				Our <span class="text-color-red">Courses</span>
 			</span>
 		</h2>
 		<!-- title end -->
@@ -529,39 +216,8 @@
 						<img class="anim-img-scale__inner"
 							src="assets/images/team/team_slider/red-air-jordan-baseball-cap-3452649.jpg"
 							alt="Jason Hardeman" />
-
-						<!-- social btns start -->
-						<ul class="list pos-abs pos-left-top">
-							<li class="list__item hidden-box">
-								<div class="hover-slide">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-01">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-02">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-03">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-04">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
-								</div>
-							</li>
-						</ul>
-						<!-- social btns end -->
 					</div>
 					<!-- anim-img-scale end -->
-
 					<!-- content start -->
 					<div class="margin-top-20 margin-left-20">
 						<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Jason
@@ -569,231 +225,6 @@
 							Jason Hardeman
 						</h4>
 						<br />
-						<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03"
-							data-text="Creative director">
-							Creative director
-						</p>
-					</div>
-					<!-- content end -->
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<!-- anim-img-scale start -->
-					<div class="anim-img-scale hover-box">
-						<img class="anim-img-scale__inner"
-							src="assets/images/team/team_slider/woman-wearing-eyeglasses-on-brown-wooden-plank-1845210.jpg"
-							alt="Amanda Bryan" />
-
-						<!-- social btns start -->
-						<ul class="list pos-abs pos-left-top">
-							<li class="list__item hidden-box">
-								<div class="hover-slide">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-01">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-02">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-03">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-04">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
-								</div>
-							</li>
-						</ul>
-						<!-- social btns end -->
-					</div>
-					<!-- anim-img-scale end -->
-
-					<!-- content start -->
-					<div class="margin-top-20 margin-left-20">
-						<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Amanda Bryan">
-							Amanda Bryan
-						</h4>
-						<br />
-						<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03"
-							data-text="Ui/UX designer">
-							Ui/UX designer
-						</p>
-					</div>
-					<!-- content end -->
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<!-- anim-img-scale start -->
-					<div class="anim-img-scale hover-box">
-						<img class="anim-img-scale__inner"
-							src="assets/images/team/team_slider/woman-posing-for-photo-shoot-1689731.jpg"
-							alt="Sharon Arney" />
-
-						<!-- social btns start -->
-						<ul class="list pos-abs pos-left-top">
-							<li class="list__item hidden-box">
-								<div class="hover-slide">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-01">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-02">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-03">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-04">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
-								</div>
-							</li>
-						</ul>
-						<!-- social btns end -->
-					</div>
-					<!-- anim-img-scale end -->
-
-					<!-- content start -->
-					<div class="margin-top-20 margin-left-20">
-						<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Sharon Arney">
-							Sharon Arney
-						</h4>
-						<br />
-						<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03"
-							data-text="Project manager">
-							Project manager
-						</p>
-					</div>
-					<!-- content end -->
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<!-- anim-img-scale start -->
-					<div class="anim-img-scale hover-box">
-						<img class="anim-img-scale__inner"
-							src="assets/images/team/team_slider/woman-wearing-black-tank-top-sitting-on-gray-stainless-steel-1850178.jpg"
-							alt="Alyse Quintero" />
-
-						<!-- social btns start -->
-						<ul class="list pos-abs pos-left-top">
-							<li class="list__item hidden-box">
-								<div class="hover-slide">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-01">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-02">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-03">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-04">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
-								</div>
-							</li>
-						</ul>
-						<!-- social btns end -->
-					</div>
-					<!-- anim-img-scale end -->
-
-					<!-- content start -->
-					<div class="margin-top-20 margin-left-20">
-						<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Alyse
-									Quintero">
-							Alyse Quintero
-						</h4>
-						<br />
-						<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03"
-							data-text="Front-end developer">
-							Front-end developer
-						</p>
-					</div>
-					<!-- content end -->
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<!-- anim-img-scale start -->
-					<div class="anim-img-scale hover-box">
-						<img class="anim-img-scale__inner"
-							src="assets/images/team/team_slider/photo-of-woman-leaning-on-wall-2936815.jpg"
-							alt="Ashley Keller" />
-
-						<!-- social btns start -->
-						<ul class="list pos-abs pos-left-top">
-							<li class="list__item hidden-box">
-								<div class="hover-slide">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-01">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-02">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-03">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
-								</div>
-							</li>
-							<li class="list__item hidden-box">
-								<div class="hover-slide tr-delay-04">
-									<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
-								</div>
-							</li>
-						</ul>
-						<!-- social btns end -->
-					</div>
-					<!-- anim-img-scale end -->
-
-					<!-- content start -->
-					<div class="margin-top-20 margin-left-20">
-						<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Ashley Keller">
-							Ashley Keller
-						</h4>
-						<br />
-						<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03"
-							data-text="Back-end developer">
-							Back-end developer
-						</p>
 					</div>
 					<!-- content end -->
 				</div>
@@ -835,11 +266,11 @@
 			<h2 class="headline-l js-scrollanim">
 				<span class="hidden-box d-block">
 					<span class="anim-slide">
-						<span class="text-color-red">Our</span>
+						<span class="text-color-red">Featured</span>
 					</span>
 				</span>
 				<span class="hidden-box d-block">
-					<span class="anim-slide tr-delay-01">Feature</span>
+					<span class="anim-slide tr-delay-01">In</span>
 				</span>
 			</h2>
 			<!-- title end -->
@@ -1033,109 +464,6 @@
 						</div>
 					</div>
 					<!-- swiper-slide end -->
-
-					<!-- swiper-slide start -->
-					<div class="swiper-slide slide-scale-anim">
-						<div
-							class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
-							<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">
-								Pitchfork vaporware hella, vice next level art party subway
-								tile swag portland. Cliche authentic photo booth, seitan
-								sartorial iPhone brooklyn bicycle rights whatever small
-								batch selvage affogato yuccie adaptogen vinyl. Sartorial
-								franzen tacos cardigan, offal gluten-free pour-over.
-							</p>
-							<!-- anim-img-scale start -->
-							<div class="anim-img-scale testimonials-author border-radius-50perc">
-								<img class="anim-img-scale__inner"
-									src="assets/images/testimonials/man-standing-near-building-white-black-turtleneck-shirt-874158.jpg"
-									alt="author" />
-							</div>
-							<!-- anim-img-scale end -->
-							<div class="margin-top-20 text-center">
-								<span class="headline-xxxs text-color-black">Edward Jordan</span><br />
-								<span class="subhead-xxs text-color-888888">Cytotechnologist</span>
-							</div>
-						</div>
-					</div>
-					<!-- swiper-slide end -->
-
-					<!-- swiper-slide start -->
-					<div class="swiper-slide slide-scale-anim">
-						<div
-							class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
-							<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">
-								Chambray enamel pin synth shabby chic palo santo. Franzen
-								90's man bun wayfarers, put a bird on it twee four loko roof
-								party shabby chic kale chips photo booth salvia mixtape
-								lumbersexual. Pug kickstarter hammock unicorn, cardigan
-								ennui celiac roof party. Ramps pitchfork direct.
-							</p>
-							<!-- anim-img-scale start -->
-							<div class="anim-img-scale testimonials-author border-radius-50perc">
-								<img class="anim-img-scale__inner"
-									src="assets/images/testimonials/informal-young-woman-listening-to-music-near-grunge-wall-3771823.jpg"
-									alt="author" />
-							</div>
-							<!-- anim-img-scale end -->
-							<div class="margin-top-20 text-center">
-								<span class="headline-xxxs text-color-black">Mary Ross</span><br />
-								<span class="subhead-xxs text-color-888888">Fashion designer</span>
-							</div>
-						</div>
-					</div>
-					<!-- swiper-slide end -->
-
-					<!-- swiper-slide start -->
-					<div class="swiper-slide slide-scale-anim">
-						<div
-							class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
-							<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">
-								Copper mug vexillologist +1 prism iPhone fashion axe
-								portland. Hella quinoa woke blog af umami tacos freegan
-								vinyl snackwave microdosing. Fanny pack direct trade XOXO
-								drinking vinegar. Live-edge kinfolk master cleanse brooklyn
-								meh organic man braid. Actually humblebrag sriracha.
-							</p>
-							<!-- anim-img-scale start -->
-							<div class="anim-img-scale testimonials-author border-radius-50perc">
-								<img class="anim-img-scale__inner"
-									src="assets/images/testimonials/photography-of-guy-wearing-yellow-hoodie-1183266.jpg"
-									alt="author" />
-							</div>
-							<!-- anim-img-scale end -->
-							<div class="margin-top-20 text-center">
-								<span class="headline-xxxs text-color-black">Dwight Bell</span><br />
-								<span class="subhead-xxs text-color-888888">Banquet manager</span>
-							</div>
-						</div>
-					</div>
-					<!-- swiper-slide end -->
-
-					<!-- swiper-slide start -->
-					<div class="swiper-slide slide-scale-anim">
-						<div
-							class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
-							<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">
-								Bushwick tumeric slow-carb photo booth letterpress franzen
-								kombucha tumblr listicle cronut waistcoat mustache. Jean
-								shorts tilde swag cray. Microdosing heirloom wayfarers YOLO,
-								church-key tattooed cred blue bottle viral lyft tacos retro.
-								Bespoke drinking vinegar single-origin.
-							</p>
-							<!-- anim-img-scale start -->
-							<div class="anim-img-scale testimonials-author border-radius-50perc">
-								<img class="anim-img-scale__inner"
-									src="assets/images/testimonials/man-standing-on-stairs-1254502.jpg" alt="author" />
-							</div>
-							<!-- anim-img-scale end -->
-							<div class="margin-top-20 text-center">
-								<span class="headline-xxxs text-color-black">Brian Amos</span><br />
-								<span class="subhead-xxs text-color-888888">Health educator</span>
-							</div>
-						</div>
-					</div>
-					<!-- swiper-slide end -->
 				</div>
 				<!-- swiper-wrapper end -->
 
@@ -1165,186 +493,6 @@
 
 <!-- testimonials end -->
 
-<!-- tranding blog start  -->
-
-<section class="pos-rel section-bg-light-2" data-midnight="black">
-	<!-- pos-rel start -->
-	<div class="pos-rel padding-top-bottom-120">
-		<!-- container start -->
-		<div class="container small">
-			<!-- title start -->
-			<h2 class="headline-xxl text-color-black text-center hidden-box">
-				<span class="anim-slide js-scrollanim">
-					From the <span class="text-color-red">Blog</span>
-				</span>
-			</h2>
-			<!-- title end -->
-
-			<!-- blog-entry start -->
-			<article class="flex-container flex-align-center padding-top-60">
-				<div class="six-columns padding-top-30">
-					<a href="post_dont-panic.html"
-						class="d-block hover-box anim-img-reveal js-scrollanim js-pointer-large js-animsition-link">
-						<div class="anim-img-reveal__hidden">
-							<div class="anim-img-reveal__scale">
-								<img class="img-hover-scale"
-									src="assets/images/posts/decor-and-furniture/two-vases-on-table-842950.jpg"
-									alt="Post" />
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="six-columns padding-top-30">
-					<div class="column-l-margin-40 anim-fade js-scrollanim">
-						<ul class="list list_row list_margin-30px">
-							<li class="list__item">
-								<a href="#" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">By:
-									Nancy Newton</a>
-							</li>
-							<li class="list__item">
-								<a href="#" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">In:
-									Art</a>
-							</li>
-							<li class="list__item">
-								<a href="#"
-									class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">2020,
-									March 2</a>
-							</li>
-						</ul>
-						<a href="post_dont-panic.html"
-							class="margin-top-bottom-30 d-block js-pointer-large js-animsition-link">
-							<h3 class="headline-xxxs text-color-black">
-								Home decor and furniture<br />
-								stores near me
-							</h3>
-							<p class="body-text-xs margin-top-20 text-color-black">
-								Plaid retro migas venmo lo-fi ethical artisan fingerstache
-								seitan you probably haven't heard of them fam keffiyeh...
-							</p>
-						</a>
-						<a href="post_dont-panic.html" class="skew-btn js-pointer-large js-animsition-link">
-							<span class="skew-btn__box">
-								<span class="skew-btn__content text-color-black">Continue reading</span>
-								<span class="skew-btn__arrow black"></span>
-							</span>
-						</a>
-					</div>
-				</div>
-			</article>
-			<!-- blog-entry end -->
-
-			<!-- blog-entry start -->
-			<article class="flex-container reverse flex-align-center padding-top-60">
-				<div class="six-columns padding-top-30">
-					<div class="column-r-margin-40 anim-fade js-scrollanim">
-						<ul class="list list_row list_margin-30px">
-							<li class="list__item">
-								<a href="#" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">By:
-									Jeffery Reder</a>
-							</li>
-							<li class="list__item">
-								<a href="#" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">In:
-									Culture</a>
-							</li>
-							<li class="list__item">
-								<a href="#"
-									class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">2020,
-									March 15</a>
-							</li>
-						</ul>
-						<a href="post_good-morning.html"
-							class="margin-top-bottom-30 d-block js-pointer-large js-animsition-link">
-							<h3 class="headline-xxxs text-color-black">
-								Good morning!<br />
-								Have a nice day
-							</h3>
-							<p class="body-text-xs margin-top-20 text-color-black">
-								Plaid retro migas venmo lo-fi ethical artisan fingerstache
-								seitan you probably haven't heard of them fam keffiyeh...
-							</p>
-						</a>
-						<a href="post_good-morning.html" class="skew-btn js-pointer-large js-animsition-link">
-							<span class="skew-btn__box">
-								<span class="skew-btn__content text-color-black">Continue reading</span>
-								<span class="skew-btn__arrow black"></span>
-							</span>
-						</a>
-					</div>
-				</div>
-				<div class="six-columns padding-top-30">
-					<a href="post_good-morning.html"
-						class="d-block hover-box anim-img-reveal js-scrollanim js-pointer-large js-animsition-link">
-						<div class="anim-img-reveal__hidden">
-							<div class="anim-img-reveal__scale">
-								<img class="img-hover-scale"
-									src="assets/images/posts/good-morning/round-white-ceramic-saucer-and-coffee-cup-2638019.jpg"
-									alt="Post" />
-							</div>
-						</div>
-					</a>
-				</div>
-			</article>
-			<!-- blog-entry end -->
-
-			<!-- blog-entry start -->
-			<article class="flex-container flex-align-center padding-top-60">
-				<div class="six-columns padding-top-30">
-					<a href="post_dont-panic.html"
-						class="d-block hover-box anim-img-reveal js-scrollanim js-pointer-large js-animsition-link">
-						<div class="anim-img-reveal__hidden">
-							<div class="anim-img-reveal__scale">
-								<img class="img-hover-scale" src="assets/images/posts/home-studio/pexels-3388901.jpg"
-									alt="Post" />
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="six-columns padding-top-30">
-					<div class="column-l-margin-40 anim-fade js-scrollanim">
-						<ul class="list list_row list_margin-30px">
-							<li class="list__item">
-								<a href="#" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">By:
-									Nick Hufnagel</a>
-							</li>
-							<li class="list__item">
-								<a href="#" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">In:
-									Design</a>
-							</li>
-							<li class="list__item">
-								<a href="#"
-									class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">2020,
-									April 7</a>
-							</li>
-						</ul>
-						<a href="post_dont-panic.html"
-							class="margin-top-bottom-30 d-block js-pointer-large js-animsition-link">
-							<h3 class="headline-xxxs text-color-black">
-								Home recording studio<br />
-								interior design
-							</h3>
-							<p class="body-text-xs margin-top-20 text-color-black">
-								Plaid retro migas venmo lo-fi ethical artisan fingerstache
-								seitan you probably haven't heard of them fam keffiyeh...
-							</p>
-						</a>
-						<a href="post_dont-panic.html" class="skew-btn js-pointer-large js-animsition-link">
-							<span class="skew-btn__box">
-								<span class="skew-btn__content text-color-black">Continue reading</span>
-								<span class="skew-btn__arrow black"></span>
-							</span>
-						</a>
-					</div>
-				</div>
-			</article>
-			<!-- blog-entry end -->
-		</div>
-		<!-- container end -->
-	</div>
-	<!-- pos-rel end -->
-</section>
-
-<!-- tranding partner end  -->
-
 <!-- our partner start  -->
 <section>
 	<div class="width-100perc padding-top-100 padding-bottom-120">
@@ -1352,8 +500,8 @@
 		<div class="container flex-container">
 			<div class="column-r-margin-20-999">
 				<!-- <h2>our</h2> -->
-				<h2 style="font-size: 60px" class="headline-s anim-text-double-fill js-scrollanim" data-text="Partners">
-					Partners
+				<h2 style="font-size: 60px" class="headline-s anim-text-double-fill js-scrollanim" data-text="Certificates">
+					Certificates
 				</h2>
 			</div>
 		</div>
@@ -1365,54 +513,6 @@
 				<!-- swiper-slide start -->
 				<div class="swiper-slide text-center">
 					<img class="client-logo" src="assets/images/clients/chayhana.png" alt="clients logo" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide text-center">
-					<img class="client-logo" src="assets/images/clients/dongolok.png" alt="clients logo" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide text-center">
-					<img class="client-logo" src="assets/images/clients/eptep-septep.png" alt="clients logo" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide text-center">
-					<img class="client-logo" src="assets/images/clients/guldoyjan.png" alt="clients logo" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide text-center">
-					<img class="client-logo" src="assets/images/clients/jorgo.png" alt="clients logo" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide text-center">
-					<img class="client-logo" src="assets/images/clients/judoboy.png" alt="clients logo" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide text-center">
-					<img class="client-logo" src="assets/images/clients/kizil-jindi.png" alt="clients logo" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide text-center">
-					<img class="client-logo" src="assets/images/clients/meyman.png" alt="clients logo" />
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide text-center">
-					<img class="client-logo" src="assets/images/clients/olchobay.png" alt="clients logo" />
 				</div>
 				<!-- swiper-slide end -->
 			</div>
@@ -1431,8 +531,8 @@
 	<div class="pos-rel padding-top-bottom-120">
 		<!-- title start -->
 		<h2 class="headline-xxl text-center js-scrollanim">
-			<span class="anim-text-fill" data-text="Latest">Latest</span>
-			<span class="text-color-red anim-text-fill tr-delay-02" data-text="Releases">Releases</span>
+			<span class="anim-text-fill" data-text="Recommend">Recommend</span>
+			<span class="text-color-red anim-text-fill tr-delay-02" data-text="Books">Books</span>
 		</h2>
 		<!-- title end -->
 
@@ -1455,90 +555,6 @@
 						<br />
 						<span class="d-inline-block hidden-box">
 							<span class="subhead-xxs text-color-b0b0b0 anim-reveal tr-delay-03">Trap/Hip-hop</span>
-						</span>
-					</div>
-					<!-- content end -->
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<!-- anim-img-scale start -->
-					<a href="project_drone.html" class="anim-img-scale d-block js-pointer-large js-animsition-link">
-						<img class="anim-img-scale__inner" src="assets/images/projects/phantom/woman-s-face-3319333.jpg"
-							alt="album" /> </a>
-					<!-- anim-img-scale end -->
-					<!-- content start -->
-					<div class="margin-top-20 margin-left-right-20 text-center">
-						<h3 class="d-inline-block hidden-box">
-							<span class="headline-xxxs anim-reveal red tr-delay-01">Phantom</span>
-						</h3>
-						<br />
-						<span class="d-inline-block hidden-box">
-							<span class="subhead-xxs text-color-b0b0b0 anim-reveal tr-delay-03">Experimental</span>
-						</span>
-					</div>
-					<!-- content end -->
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<!-- anim-img-scale start -->
-					<a href="project_drone.html" class="anim-img-scale d-block js-pointer-large js-animsition-link">
-						<img class="anim-img-scale__inner"
-							src="assets/images/projects/red-led-light/red-led-light-with-silhouette-of-a-man-3094799.jpg"
-							alt="album" /> </a><!-- anim-img-scale end -->
-					<!-- content start -->
-					<div class="margin-top-20 margin-left-right-20 text-center">
-						<h3 class="d-inline-block hidden-box">
-							<span class="headline-xxxs anim-reveal red tr-delay-01">Red Led Light</span>
-						</h3>
-						<br />
-						<span class="d-inline-block hidden-box">
-							<span class="subhead-xxs text-color-b0b0b0 anim-reveal tr-delay-03">R'n'B/Glitch</span>
-						</span>
-					</div>
-					<!-- content end -->
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<!-- anim-img-scale start -->
-					<a href="project_drone.html" class="anim-img-scale d-block js-pointer-large js-animsition-link">
-						<img class="anim-img-scale__inner"
-							src="assets/images/projects/the-doors/person-standing-on-opened-doorway-2276051.jpg"
-							alt="album" /> </a><!-- anim-img-scale end -->
-					<!-- content start -->
-					<div class="margin-top-20 margin-left-right-20 text-center">
-						<h3 class="d-inline-block hidden-box">
-							<span class="headline-xxxs anim-reveal red tr-delay-01">The Doors</span>
-						</h3>
-						<br />
-						<span class="d-inline-block hidden-box">
-							<span class="subhead-xxs text-color-b0b0b0 anim-reveal tr-delay-03">Electronic</span>
-						</span>
-					</div>
-					<!-- content end -->
-				</div>
-				<!-- swiper-slide end -->
-
-				<!-- swiper-slide start -->
-				<div class="swiper-slide">
-					<!-- anim-img-scale start -->
-					<a href="project_drone.html" class="anim-img-scale d-block js-pointer-large js-animsition-link">
-						<img class="anim-img-scale__inner"
-							src="assets/images/projects/corona/mona-lisa-with-face-mask-3957982.jpg" alt="album" />
-					</a><!-- anim-img-scale end -->
-					<!-- content start -->
-					<div class="margin-top-20 margin-left-right-20 text-center">
-						<h3 class="d-inline-block hidden-box">
-							<span class="headline-xxxs anim-reveal red tr-delay-01">Corona</span>
-						</h3>
-						<br />
-						<span class="d-inline-block hidden-box">
-							<span class="subhead-xxs text-color-b0b0b0 anim-reveal tr-delay-03">Indie Pop</span>
 						</span>
 					</div>
 					<!-- content end -->
