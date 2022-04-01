@@ -1,7 +1,5 @@
-from tabnanny import verbose
 from django.db import models
 from base.models import (
-    BaseAdminStackLine,
     BaseModel,
     get_image_file_extension_validator,)
 from django.utils.translation import gettext_lazy as _
@@ -109,14 +107,12 @@ class FeaturedIn(BaseModel):
     class Meta:
         verbose_name_plural = "Fetured In"
     
-    message = models.CharField(_("Message"), default="", max_length=50)
-
     def __str__(self):
-        return self.message
-    
+        return "Freatured On"
+
     def clean(self):
         super().clean()
-        if not self.id and MembershipPerks.objects.exists():
+        if not self.id and FeaturedIn.objects.exists():
             raise ValidationError('You cannot add more somethings.')
     
 class FeaturedInPhoto(BaseModel):
@@ -125,6 +121,7 @@ class FeaturedInPhoto(BaseModel):
     image = models.FileField(_("Image"), upload_to="home/featured_in/",
         validators=get_image_file_extension_validator(),
     )
+    url = models.URLField()
     class Meta:
             verbose_name_plural = "Image"
             
@@ -141,6 +138,14 @@ class TestiminialPass(BaseModel):
     
     class Meta:
         verbose_name_plural = "Testimonial"
+        
+    def __str__(self):
+        return "Testimonial"
+
+    def clean(self):
+        super().clean()
+        if not self.id and TestiminialPass.objects.exists():
+            raise ValidationError('You cannot add more somethings.')
 
 class Testimonial(BaseModel):
     
@@ -155,7 +160,14 @@ class Testimonial(BaseModel):
         
 class Certificate(BaseModel):
     
-   class Meta:
+    def __str__(self):
+        return "Certificate"
+
+    def clean(self):
+        super().clean()
+        if not self.id and Certificate.objects.exists():
+            raise ValidationError('You cannot add more somethings.')
+    class Meta:
         verbose_name_plural = "Certificate"
 
 class CertificateImage(BaseModel):
@@ -179,10 +191,15 @@ class CertificateImage(BaseModel):
 class RecommendedBooks(BaseModel):
 
     class Meta:
-            verbose_name_plural = "Recommend Book"
-            
+        verbose_name_plural = "Recommend Book"
+    
     def __str__(self):
-        return self.book_name
+        return "Recommend Book"
+
+    def clean(self):
+        super().clean()
+        if not self.id and RecommendedBooks.objects.exists():
+            raise ValidationError('You cannot add more somethings.')
     
 class BookImage(BaseModel):
 
@@ -223,12 +240,9 @@ class IntroVideo(BaseModel):
 
 class Subscriber(BaseModel):
 
-    premium_clients = models.CharField(_("Premium Client"), max_length=100,default="Premium Client")
-    premium_clients_users = models.IntegerField(_("Total Users"), default="")
-    international_clients = models.CharField(_("International Client"), max_length=100,default="International Client")
-    international_clients_users = models.IntegerField(_("Total Users"), default="")
-    subscriber = models.CharField(_("Subscriber Client"), max_length=100,default="Subscriber Client")
-    subscriber_users = models.IntegerField(_("Total Users"), default="")
+    premium_clients_users = models.IntegerField(_("Premium Clients"), default="")
+    international_clients_users = models.IntegerField(_("International Clients"), default="")
+    subscriber_users = models.IntegerField(_("Subscriber"), default="")
     
     def __str__(self):
         return "Subscriber" 
