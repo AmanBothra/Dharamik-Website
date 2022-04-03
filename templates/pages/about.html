@@ -6,12 +6,8 @@
 <!-- banner start -->
 <main class="js-animsition-overlay" data-animsition-overlay="true">
     <!-- page head start -->
-    <section id="up" class="pos-rel bg-img-cover"
-        style="background-image:url(static/images/backgrounds/man-in-black-crew-neck-shirt-wearing-blue-sunglasses-3951774.jpg)">
-        <!-- video -->
-        <!-- <h1>About US</h1> -->
-        <!-- <video src="http://www.nurseitmukaytegin.com/envato-templates/videos/dj.mp4" class="video-bg" muted loop autoplay playsinline></video> -->
-        <!-- bg-overlay -->
+    {% for obj in banner %}
+    <section id="up" class="pos-rel bg-img-cover" style="background-image:url({{obj.image.url}})">
         <div class="bg-overlay-black"></div>
         <!-- pos-rel start -->
         <div class="pos-rel flex-min-height-100vh">
@@ -20,21 +16,14 @@
                 <h2 class="headline-xxxxl hidden-box">
                     <span class="anim-slide">About US</span>
                 </h2><!-- title end -->
-                <!-- <p class="subhead-m margin-top-20 anim-fade tr-delay-01">Pitchfork green juice meh ethical slow-carb poke authentic salvia skateboard helvetica tousled bicycle rights ennui.</p> -->
-                <div class="margin-top-30 anim-fade tr-delay-02">
-                    <a href="#" class="border-btn js-pointer-large">
-                        <span class="border-btn__inner">Contact me</span>
-                        <span class="border-btn__lines-1"></span>
-                        <span class="border-btn__lines-2"></span>
-                    </a>
-                </div>
             </div>
         </div><!-- pos-rel end -->
     </section><!-- page head end -->
+    {% endfor %}
 </main>
 <!-- banner end -->
 
-<!-- reasons start -->
+<!-- reasons why choose as start -->
 <section class="pos-rel section-bg-dark-2">
     <!-- lines-container start -->
     <div class="lines-container pos-rel flex-min-height-100vh">
@@ -51,24 +40,16 @@
             </h2><!-- title end -->
 
             <!-- flex-container start -->
+            {% for obj in why_choose %}
+
+            {% endfor %}
             <div class="flex-container padding-top-30">
                 <!-- column start -->
                 <div class="four-columns column-50-100 padding-top-60">
                     <div class="line-col-l-r-margin-20 anim-fade js-scrollanim">
                         <span class="subhead-xs text-color-red">01</span><br>
-                        <h5 class="headline-xxxs margin-top-30">Godard slow-carb chartreuse</h5>
-                        <p class="body-text-s margin-top-20">IPhone kombucha shaman gastropub snackwave 90's lo-fi pug
-                            chillwave pok pok tofu. Swag deep v listicle roof party seitan man braid raclette church-key
-                            trust fund locavore vexillologist green juice raw denim tilde meh. Austin thundercats
-                            locavore taiyaki snackwave hoodie put a bird on it tattooed selvage kitsch ramps.</p>
-                        <div class="margin-top-30">
-                            <a href="#" class="skew-btn js-pointer-large">
-                                <span class="skew-btn__box">
-                                    <span class="skew-btn__content">Read More</span>
-                                    <span class="skew-btn__arrow"></span>
-                                </span>
-                            </a>
-                        </div>
+                        <h5 class="headline-xxxs margin-top-30">{{obj.step_one_title}}</h5>
+                        <p class="body-text-s margin-top-20">{{obj.step_one_description}}</p>
                     </div>
                 </div><!-- column end -->
 
@@ -76,19 +57,8 @@
                 <div class="four-columns column-50-100 padding-top-60">
                     <div class="line-col-l-r-margin-20 anim-fade js-scrollanim">
                         <span class="subhead-xs text-color-red">02</span><br>
-                        <h5 class="headline-xxxs margin-top-30">Blog shoreditch food truck</h5>
-                        <p class="body-text-s margin-top-20">Paleo la croix live-edge four dollar toast sartorial
-                            mustache banh mi mlkshk. Hexagon hella four dollar toast +1 gentrify farm-to-table. IPhone
-                            franzen portland cardigan fixie blog. Brunch vinyl DIY crucifix taxidermy affogato cred
-                            selvage quinoa direct trade keytar sustainable shabby chic intelligentsia kombucha.</p>
-                        <div class="margin-top-30">
-                            <a href="#" class="skew-btn js-pointer-large">
-                                <span class="skew-btn__box">
-                                    <span class="skew-btn__content">Read More</span>
-                                    <span class="skew-btn__arrow"></span>
-                                </span>
-                            </a>
-                        </div>
+                        <h5 class="headline-xxxs margin-top-30">{{obj.step_two_title}}</h5>
+                        <p class="body-text-s margin-top-20">{{obj.step_two_description}}</p>
                     </div>
                 </div><!-- column end -->
 
@@ -96,138 +66,15 @@
                 <div class="four-columns column-50-100 padding-top-60">
                     <div class="line-col-l-r-margin-20 anim-fade js-scrollanim">
                         <span class="subhead-xs text-color-red">03</span><br>
-                        <h5 class="headline-xxxs margin-top-30">Cronut cred food tumeric</h5>
-                        <p class="body-text-s margin-top-20">Thundercats raw denim banjo. Franzen bitters mlkshk pok
-                            pok. Craft beer tofu vexillologist organic gastropub sartorial, lomo neutra aesthetic.
-                            Unicorn organic copper mug green juice typewriter la croix hashtag 90's before they sold
-                            out. Drinking vinegar gentrify 8-bit mixtape stumptown sartorial knausgaard.</p>
-                        <div class="margin-top-30">
-                            <a href="#" class="skew-btn js-pointer-large">
-                                <span class="skew-btn__box">
-                                    <span class="skew-btn__content">Read More</span>
-                                    <span class="skew-btn__arrow"></span>
-                                </span>
-                            </a>
-                        </div>
+                        <h5 class="headline-xxxs margin-top-30">{{obj.step_three_title}}</h5>
+                        <p class="body-text-s margin-top-20">{{obj.step_three_description}}</p>
                     </div>
                 </div><!-- column end -->
             </div><!-- flex-container end -->
         </div><!-- width-100perc end -->
     </div><!-- lines-container end -->
 </section>
-<!-- reasons end -->
-
-
-<!-- Award and Honors start  -->
-<section class="pos-rel section-bg-dark-2">
-    <!-- pos-rel start -->
-    <div class="pos-rel flex-min-height-100vh">
-        <!-- container start -->
-        <div class="container padding-top-bottom-120">
-            <!-- title start -->
-            <h2 class="headline-xl text-center hidden-box js-scrollanim">
-                <span class="anim-slide">Awards and Honors</span>
-            </h2><!-- title end -->
-
-            <!-- flex-container start -->
-            <div class="flex-container flex-justify-center padding-top-30">
-                <!-- column start -->
-                <div class="four-columns column-100-100 padding-top-60">
-                    <div class="column-l-r-margin-10-999 text-center">
-                        <div class="awards-logo">
-                            <img class="awards-logo__inner" src="assets/images/awards/fire-awards.png" alt="awards">
-                        </div>
-                        <h3 class="headline-xxxs margin-top-30">Fire Awards X2</h3>
-                        <ul class="list margin-top-20 text-color-b0b0b0 subhead-xxs">
-                            <li class="list__item">
-                                <p>Best digital agency</p>
-                            </li>
-                            <li class="list__item">
-                                <p>Best creative agency</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- column end -->
-
-                <!-- column start -->
-                <div class="four-columns column-100-100 padding-top-60">
-                    <div class="column-l-r-margin-10-999 text-center">
-                        <div class="awards-logo">
-                            <img class="awards-logo__inner" src="assets/images/awards/me-awards.png" alt="awards">
-                        </div>
-                        <h3 class="headline-xxxs margin-top-30">ME Awards X3</h3>
-                        <ul class="list margin-top-20 text-color-b0b0b0 subhead-xxs">
-                            <li class="list__item">
-                                <p>Best graphic design</p>
-                            </li>
-                            <li class="list__item">
-                                <p>Best UI design</p>
-                            </li>
-                            <li class="list__item">
-                                <p>Best UX design</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- column end -->
-
-                <!-- column start -->
-                <div class="four-columns column-100-100 padding-top-60">
-                    <div class="column-l-r-margin-10-999 text-center">
-                        <div class="awards-logo">
-                            <img class="awards-logo__inner" src="assets/images/awards/superstar.png" alt="awards">
-                        </div>
-                        <h3 class="headline-xxxs margin-top-30">Superstars X2</h3>
-                        <ul class="list margin-top-20 text-color-b0b0b0 subhead-xxs">
-                            <li class="list__item">
-                                <p>Agency of the year</p>
-                            </li>
-                            <li class="list__item">
-                                <p>Best creative team</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- column end -->
-
-                <!-- column start -->
-                <div class="four-columns column-100-100 padding-top-60">
-                    <div class="column-l-r-margin-10-999 text-center">
-                        <div class="awards-logo">
-                            <img class="awards-logo__inner" src="assets/images/awards/security-awards.png" alt="awards">
-                        </div>
-                        <h3 class="headline-xxxs margin-top-30">Security Awards X2</h3>
-                        <ul class="list margin-top-20 text-color-b0b0b0 subhead-xxs">
-                            <li class="list__item">
-                                <p>Best website</p>
-                            </li>
-                            <li class="list__item">
-                                <p>Best design</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- column end -->
-
-                <!-- column start -->
-                <div class="four-columns column-100-100 padding-top-60">
-                    <div class="column-l-r-margin-10-999 text-center">
-                        <div class="awards-logo">
-                            <img class="awards-logo__inner" src="assets/images/awards/urban-awards.png" alt="awards">
-                        </div>
-                        <h3 class="headline-xxxs margin-top-30">Urban Awards X2</h3>
-                        <ul class="list margin-top-20 text-color-b0b0b0 subhead-xxs">
-                            <li class="list__item">
-                                <p>Best branding</p>
-                            </li>
-                            <li class="list__item">
-                                <p>Best marketing</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- column end -->
-            </div><!-- flex-container end -->
-        </div><!-- container end -->
-    </div><!-- pos-rel end -->
-</section>
-<!-- Award and Honors end  -->
+<!-- reasons why choose as end -->
 
 <!-- faq start -->
 <section class="lines-section pos-rel section-bg-dark-2">
@@ -250,141 +97,24 @@
                 <div
                     class="accordion accordion_underline accordion_l-r-border js-accordion-first-active js-accordion content-bg-dark-2 zindex5 pos-rel">
                     <!-- accordion__tab start -->
+                    {% for obj in faq %}
                     <div class="accordion__tab js-accordion-tab padding-left-right-20">
                         <div class="accordion__btn js-accordion-btn js-pointer-large">
                             <div class="accordion__btn-title margin-top-bottom-20 d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">Q:1</div>
-                                <div class="subhead-xxs">Shoreditch cliche marfa godard gochujang kinfolk hoodie you?
+                                <div class="headline-xxs text-color-red padding-right-30">Q</div>
+                                <div class="subhead-xxs">{{obj.question}}
                                 </div>
                             </div>
                         </div>
                         <div class="accordion__content js-accordion-content">
                             <div class="d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">A:1</div>
-                                <div class="body-text-s">Pinterest lumbersexual forage chillwave godard pitchfork
-                                    vexillologist deep v chia truffaut four dollar toast food truck meditation. Hot
-                                    chicken coloring book cliche YOLO, crucifix kale chips swag hexagon raclette paleo
-                                    next level austin. Hammock sriracha paleo, iPhone swag af flexitarian hella pickled
-                                    neutra pug. Trust fund chicharrones iPhone stumptown chia. Godard 3 wolf moon tacos
-                                    try-hard, raw denim locavore messenger bag portland. Blue bottle hashtag schlitz
-                                    etsy knausgaard, aesthetic tacos freegan lomo deep v fashion axe.</div>
+                                <div class="headline-xxs text-color-red padding-right-30">A</div>
+                                <div class="body-text-s">{{obj.answer}}</div>
                             </div>
                         </div>
-                    </div><!-- accordion__tab end -->
-
-                    <!-- accordion__tab start -->
-                    <div class="accordion__tab js-accordion-tab padding-left-right-20">
-                        <div class="accordion__btn js-accordion-btn js-pointer-large">
-                            <div class="accordion__btn-title margin-top-bottom-20 d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">Q:2</div>
-                                <div class="subhead-xxs">Polaroid af ethical green juice, PBR&B kale chips chicharrones
-                                    mixtape wayfarers air?</div>
-                            </div>
-                        </div>
-                        <div class="accordion__content js-accordion-content">
-                            <div class="d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">A:2</div>
-                                <div class="body-text-s">Pinterest lumbersexual forage chillwave godard pitchfork
-                                    vexillologist deep v chia truffaut four dollar toast food truck meditation. Hot
-                                    chicken coloring book cliche YOLO, crucifix kale chips swag hexagon raclette paleo
-                                    next level austin. Hammock sriracha paleo, iPhone swag af flexitarian hella pickled
-                                    neutra pug. Trust fund chicharrones iPhone stumptown chia. Godard 3 wolf moon tacos
-                                    try-hard, raw denim locavore messenger bag portland. Blue bottle hashtag schlitz
-                                    etsy knausgaard, aesthetic tacos freegan lomo deep v fashion axe.</div>
-                            </div>
-                        </div>
-                    </div><!-- accordion__tab end -->
-
-                    <!-- accordion__tab start -->
-                    <div class="accordion__tab js-accordion-tab padding-left-right-20">
-                        <div class="accordion__btn js-accordion-btn js-pointer-large">
-                            <div class="accordion__btn-title margin-top-bottom-20 d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">Q:3</div>
-                                <div class="subhead-xxs">Next level austin. Yuccie thundercats irony prism man braid
-                                    narwhal mustache taxidermy chillwave?</div>
-                            </div>
-                        </div>
-                        <div class="accordion__content js-accordion-content">
-                            <div class="d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">A:3</div>
-                                <div class="body-text-s">Pinterest lumbersexual forage chillwave godard pitchfork
-                                    vexillologist deep v chia truffaut four dollar toast food truck meditation. Hot
-                                    chicken coloring book cliche YOLO, crucifix kale chips swag hexagon raclette paleo
-                                    next level austin. Hammock sriracha paleo, iPhone swag af flexitarian hella pickled
-                                    neutra pug. Trust fund chicharrones iPhone stumptown chia. Godard 3 wolf moon tacos
-                                    try-hard, raw denim locavore messenger bag portland. Blue bottle hashtag schlitz
-                                    etsy knausgaard, aesthetic tacos freegan lomo deep v fashion axe.</div>
-                            </div>
-                        </div>
-                    </div><!-- accordion__tab end -->
-
-                    <!-- accordion__tab start -->
-                    <div class="accordion__tab js-accordion-tab padding-left-right-20">
-                        <div class="accordion__btn js-accordion-btn js-pointer-large">
-                            <div class="accordion__btn-title margin-top-bottom-20 d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">Q:4</div>
-                                <div class="subhead-xxs">Hot chicken coloring book cliche YOLO, crucifix kale chips swag
-                                    hexagon raclette paleo?</div>
-                            </div>
-                        </div>
-                        <div class="accordion__content js-accordion-content">
-                            <div class="d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">A:4</div>
-                                <div class="body-text-s">Pinterest lumbersexual forage chillwave godard pitchfork
-                                    vexillologist deep v chia truffaut four dollar toast food truck meditation. Hot
-                                    chicken coloring book cliche YOLO, crucifix kale chips swag hexagon raclette paleo
-                                    next level austin. Hammock sriracha paleo, iPhone swag af flexitarian hella pickled
-                                    neutra pug. Trust fund chicharrones iPhone stumptown chia. Godard 3 wolf moon tacos
-                                    try-hard, raw denim locavore messenger bag portland. Blue bottle hashtag schlitz
-                                    etsy knausgaard, aesthetic tacos freegan lomo deep v fashion axe.</div>
-                            </div>
-                        </div>
-                    </div><!-- accordion__tab end -->
-
-                    <!-- accordion__tab start -->
-                    <div class="accordion__tab js-accordion-tab padding-left-right-20">
-                        <div class="accordion__btn js-accordion-btn js-pointer-large">
-                            <div class="accordion__btn-title margin-top-bottom-20 d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">Q:5</div>
-                                <div class="subhead-xxs">Chia truffaut four dollar toast food truck meditation?</div>
-                            </div>
-                        </div>
-                        <div class="accordion__content js-accordion-content">
-                            <div class="d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">A:5</div>
-                                <div class="body-text-s">Pinterest lumbersexual forage chillwave godard pitchfork
-                                    vexillologist deep v chia truffaut four dollar toast food truck meditation. Hot
-                                    chicken coloring book cliche YOLO, crucifix kale chips swag hexagon raclette paleo
-                                    next level austin. Hammock sriracha paleo, iPhone swag af flexitarian hella pickled
-                                    neutra pug. Trust fund chicharrones iPhone stumptown chia. Godard 3 wolf moon tacos
-                                    try-hard, raw denim locavore messenger bag portland. Blue bottle hashtag schlitz
-                                    etsy knausgaard, aesthetic tacos freegan lomo deep v fashion axe.</div>
-                            </div>
-                        </div>
-                    </div><!-- accordion__tab end -->
-
-                    <!-- accordion__tab start -->
-                    <div class="accordion__tab js-accordion-tab padding-left-right-20">
-                        <div class="accordion__btn js-accordion-btn js-pointer-large">
-                            <div class="accordion__btn-title margin-top-bottom-20 d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">Q:6</div>
-                                <div class="subhead-xxs">Pinterest lumbersexual forage chillwave godard pitchfork
-                                    vexillologist deep?</div>
-                            </div>
-                        </div>
-                        <div class="accordion__content js-accordion-content">
-                            <div class="d-flex flex-align-center">
-                                <div class="headline-xxs text-color-red padding-right-30">A:6</div>
-                                <div class="body-text-s">Pinterest lumbersexual forage chillwave godard pitchfork
-                                    vexillologist deep v chia truffaut four dollar toast food truck meditation. Hot
-                                    chicken coloring book cliche YOLO, crucifix kale chips swag hexagon raclette paleo
-                                    next level austin. Hammock sriracha paleo, iPhone swag af flexitarian hella pickled
-                                    neutra pug. Trust fund chicharrones iPhone stumptown chia. Godard 3 wolf moon tacos
-                                    try-hard, raw denim locavore messenger bag portland. Blue bottle hashtag schlitz
-                                    etsy knausgaard, aesthetic tacos freegan lomo deep v fashion axe.</div>
-                            </div>
-                        </div>
-                    </div><!-- accordion__tab end -->
+                    </div>
+                    {% endfor %}
+                    <!-- accordion__tab end -->
                 </div><!-- accordion end -->
             </div><!-- column end -->
         </div><!-- flex-container end -->
@@ -395,6 +125,7 @@
 <!-- main start -->
 <main class="js-animsition-overlay" data-animsition-overlay="true">
     <!-- page head start -->
+    {% for obj in what_we_do %}
     <section id="up" class="pos-rel section-bg-dark-1">
         <!-- pos-rel start -->
         <div class="pos-rel flex-min-height-100vh">
@@ -402,14 +133,15 @@
                 <h3 class="headline-xxxs hidden-box">
                     <span class="anim-slide">What We Do</span>
                 </h3>
-                <h2 class="subhead-xxl margin-top-20 anim-text-reveal tr-delay-03">90's mixtape single-origin coffee
-                    XOXO fashion axe butcher whatever, kinfolk cornhole retro cliche tofu humblebrag before they sold
-                    out. Af hammock listicle vape banjo echo park meditation organic cred subway tile.</h2>
+                <h2 class="subhead-xxl margin-top-20 anim-text-reveal tr-delay-03">{{obj.description}}</h2>
             </div>
         </div><!-- pos-rel end -->
-    </section><!-- page head end -->
+    </section>
+    {% endfor %}
+    <!-- page head end -->
 
     <!-- work process start -->
+    {% for obj in process %}
     <section id="down" class="pos-rel section-bg-light-1" data-midnight="black">
         <!-- pos-rel start -->
         <div class="pos-rel flex-min-height-100vh">
@@ -428,13 +160,11 @@
                                 <span class="anim-slide">01</span>
                             </span>
                             <h3 class="headline-xxxs text-color-black margin-top-30 hidden-box">
-                                <span class="anim-slide tr-delay-01">Brainstorming</span>
+                                <span class="anim-slide tr-delay-01">{{obj.step_one_title}}</span>
                             </h3>
-                            <p class="body-text-s text-color-black margin-top-20 anim-text-reveal tr-delay-02">Pok pok
-                                authentic fashion axe, vegan venmo leggings raclette tousled twee tattooed. Banh mi
-                                humblebrag hammock tacos fashion axe aesthetic vegan sustainable taiyaki thundercats
-                                jean shorts tousled cloud bread waistcoat kogi. Cloud bread cardigan messenger bag raw
-                                denim swag drinking vinegar.</p>
+                            <p class="body-text-s text-color-black margin-top-20 anim-text-reveal tr-delay-02">
+                                {{obj.step_one_description}}
+                            </p>
                         </div>
                     </div><!-- column end -->
 
@@ -445,13 +175,11 @@
                                 <span class="anim-slide">02</span>
                             </span>
                             <h3 class="headline-xxxs text-color-black margin-top-30 hidden-box">
-                                <span class="anim-slide tr-delay-01">Approaching</span>
+                                <span class="anim-slide tr-delay-01">{{obj.step_two_title}}</span>
                             </h3>
-                            <p class="body-text-s text-color-black margin-top-20 anim-text-reveal tr-delay-02">Pok pok
-                                authentic fashion axe, vegan venmo leggings raclette tousled twee tattooed. Banh mi
-                                humblebrag hammock tacos fashion axe aesthetic vegan sustainable taiyaki thundercats
-                                jean shorts tousled cloud bread waistcoat kogi. Cloud bread cardigan messenger bag raw
-                                denim swag drinking vinegar.</p>
+                            <p class="body-text-s text-color-black margin-top-20 anim-text-reveal tr-delay-02">
+                                {{obj.step_two_description}}
+                            </p>
                         </div>
                     </div><!-- column end -->
 
@@ -462,363 +190,19 @@
                                 <span class="anim-slide">03</span>
                             </span>
                             <h3 class="headline-xxxs text-color-black margin-top-30 hidden-box">
-                                <span class="anim-slide tr-delay-01">Adjusting</span>
+                                <span class="anim-slide tr-delay-01">{{obj.step_three_title}}</span>
                             </h3>
-                            <p class="body-text-s text-color-black margin-top-20 anim-text-reveal tr-delay-02">Pok pok
-                                authentic fashion axe, vegan venmo leggings raclette tousled twee tattooed. Banh mi
-                                humblebrag hammock tacos fashion axe aesthetic vegan sustainable taiyaki thundercats
-                                jean shorts tousled cloud bread waistcoat kogi. Cloud bread cardigan messenger bag raw
-                                denim swag drinking vinegar.</p>
+                            <p class="body-text-s text-color-black margin-top-20 anim-text-reveal tr-delay-02">
+                                {{obj.step_three_description}}
+                            </p>
                         </div>
                     </div><!-- column end -->
                 </div><!-- flex-container end -->
             </div><!-- container end -->
         </div><!-- pos-rel end -->
-    </section><!-- work process end -->
-
-    <!-- how we do start -->
-    <section class="pos-rel section-bg-dark-1">
-        <!-- pos-rel start -->
-        <div class="pos-rel padding-top-bottom-120">
-            <h2 class="headline-xxl text-center hidden-box">
-                <span class="anim-slide js-scrollanim">How We Do</span>
-            </h2>
-
-            <!-- padding-top-90 start -->
-            <div class="padding-top-90">
-                <div class="container padding-top-bottom-150 bg-img-cover pos-rel"
-                    style="background-image:url(assets/images/backgrounds/man-wearing-black-headset-3345882.jpg)">
-                    <!-- bg-overlay -->
-                    <div class="bg-overlay-black"></div>
-                    <a href="https://www.youtube.com/watch?v=hitNXU4PoRU"
-                        class="play-button js-popup-youtube js-pointer-large">
-                        <span class="play-button__inner"></span>
-                    </a>
-                </div>
-
-                <!-- flex-container start -->
-                <div class="container small flex-container padding-top-30">
-                    <!-- column start -->
-                    <div class="four-columns column-100-100 padding-top-30">
-                        <div class="column-r-margin-40-999">
-                            <div class="js-scrollanim">
-                                <h4 class="subhead-xxs text-color-red anim-overlay red margin-bottom-1">Development</h4>
-                                <h3 class="headline-xxxs list list_margin-1px">
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-01">Scenester semiotics</span>
-                                    </span>
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-02">plaid vegan four</span>
-                                    </span>
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-03">loko vinyl bicycle</span>
-                                    </span>
-                                </h3>
-                            </div>
-                            <!-- list start -->
-                            <ul class="list subhead-xxs text-color-b0b0b0 margin-top-30 js-scrollanim">
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide">Graphic Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-01">User Interface Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-02">User Experience Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-03">Web Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-04">Motion Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-05">Front-end Development</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-06">Back-end Development</p>
-                                </li>
-                            </ul><!-- list end -->
-                        </div>
-                    </div><!-- column end -->
-
-                    <!-- column start -->
-                    <div class="eight-columns column-100-100 padding-top-30">
-                        <p class="body-text-s anim-text-reveal js-scrollanim">Blog shoreditch food truck aesthetic.
-                            Artisan wolf copper mug raw denim, green juice cardigan listicle paleo la croix live-edge
-                            four dollar toast sartorial mustache banh mi mlkshk. Hexagon hella four dollar toast +1
-                            gentrify farm-to-table. IPhone franzen portland cardigan fixie blog. Brunch vinyl DIY
-                            crucifix taxidermy affogato cred selvage quinoa direct trade keytar sustainable shabby chic
-                            intelligentsia kombucha. Scenester paleo knausgaard organic kogi ramps asymmetrical schlitz
-                            hot chicken swag kale chips palo santo. Intelligentsia wolf gastropub, twee lomo small batch
-                            slow-carb.</p>
-                    </div><!-- column end -->
-                </div><!-- flex-container end -->
-            </div><!-- padding-top-90 end -->
-
-            <!-- padding-top-90 start -->
-            <div class="padding-top-90">
-                <div class="container padding-top-bottom-150 bg-img-cover pos-rel"
-                    style="background-image:url(assets/images/backgrounds/flatlay-lifestyles-aesthetics-forbes-3361176.jpg)">
-                    <!-- bg-overlay -->
-                    <div class="bg-overlay-black"></div>
-                    <a href="https://www.youtube.com/watch?v=hitNXU4PoRU"
-                        class="play-button js-popup-youtube js-pointer-large">
-                        <span class="play-button__inner"></span>
-                    </a>
-                </div>
-
-                <!-- flex-container start -->
-                <div class="container small flex-container padding-top-30">
-                    <!-- column start -->
-                    <div class="four-columns column-100-100 padding-top-30">
-                        <div class="column-r-margin-40-999">
-                            <div class="js-scrollanim">
-                                <h4 class="subhead-xxs text-color-red anim-overlay red margin-bottom-1">Design</h4>
-                                <h3 class="headline-xxxs list list_margin-1px">
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-01">Rights letterpress</span>
-                                    </span>
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-02">you probably haven't</span>
-                                    </span>
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-03">heard of them</span>
-                                    </span>
-                                </h3>
-                            </div>
-                            <!-- list start -->
-                            <ul class="list list_counter subhead-xxs text-color-b0b0b0 margin-top-30 js-scrollanim">
-                                <li class="list__item red hidden-box">
-                                    <p class="anim-slide">User Experience Design</p>
-                                </li>
-                                <li class="list__item red hidden-box">
-                                    <p class="anim-slide tr-delay-01">Web Design</p>
-                                </li>
-                                <li class="list__item red hidden-box">
-                                    <p class="anim-slide tr-delay-02">Motion Design</p>
-                                </li>
-                                <li class="list__item red hidden-box">
-                                    <p class="anim-slide tr-delay-03">Graphic Design</p>
-                                </li>
-                                <li class="list__item red hidden-box">
-                                    <p class="anim-slide tr-delay-04">User Interface Design</p>
-                                </li>
-                                <li class="list__item red hidden-box">
-                                    <p class="anim-slide tr-delay-05">Front-end Development</p>
-                                </li>
-                                <li class="list__item red hidden-box">
-                                    <p class="anim-slide tr-delay-06">Back-end Development</p>
-                                </li>
-                            </ul><!-- list end -->
-                        </div>
-                    </div><!-- column end -->
-
-                    <!-- column start -->
-                    <div class="eight-columns column-100-100 padding-top-30">
-                        <p class="body-text-s anim-text-reveal js-scrollanim">Hexagon hella four dollar toast +1
-                            gentrify farm-to-table. IPhone franzen portland cardigan fixie blog. Brunch vinyl DIY
-                            crucifix taxidermy affogato cred selvage quinoa direct trade keytar sustainable shabby chic
-                            intelligentsia kombucha. Scenester paleo knausgaard organic kogi ramps asymmetrical schlitz
-                            hot chicken swag kale chips palo santo. Intelligentsia wolf gastropub, twee lomo small batch
-                            slow-carb. Blog shoreditch food truck aesthetic. Artisan wolf copper mug raw denim, green
-                            juice cardigan listicle paleo la croix live-edge four dollar toast sartorial mustache banh
-                            mi mlkshk.</p>
-                    </div><!-- column end -->
-                </div><!-- flex-container end -->
-            </div><!-- padding-top-90 end -->
-
-            <!-- padding-top-90 start -->
-            <div class="padding-top-90">
-                <div class="container padding-top-bottom-150 bg-img-cover pos-rel"
-                    style="background-image:url(assets/images/backgrounds/books-business-computer-connection-459654.jpg)">
-                    <!-- bg-overlay -->
-                    <div class="bg-overlay-black"></div>
-                    <a href="https://www.youtube.com/watch?v=hitNXU4PoRU"
-                        class="play-button js-popup-youtube js-pointer-large">
-                        <span class="play-button__inner"></span>
-                    </a>
-                </div>
-
-                <!-- flex-container start -->
-                <div class="container small flex-container padding-top-30">
-                    <!-- column start -->
-                    <div class="four-columns column-100-100 padding-top-30">
-                        <div class="column-r-margin-40-999">
-                            <div class="js-scrollanim">
-                                <h4 class="subhead-xxs text-color-red anim-overlay red margin-bottom-1">Marketing</h4>
-                                <h3 class="headline-xxxs list list_margin-1px">
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-01">Before they sold</span>
-                                    </span>
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-02">activated charcoal</span>
-                                    </span>
-                                    <span class="list__item">
-                                        <span class="anim-overlay white tr-delay-03">master cleanse meh</span>
-                                    </span>
-                                </h3>
-                            </div>
-                            <!-- list start -->
-                            <ul class="list subhead-xxs text-color-b0b0b0 margin-top-30 js-scrollanim">
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide">Motion Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-01">Front-end Development</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-02">Back-end Development</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-03">Graphic Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-04">User Interface Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-05">User Experience Design</p>
-                                </li>
-                                <li class="list__item red dot hidden-box">
-                                    <p class="anim-slide tr-delay-06">Web Design</p>
-                                </li>
-                            </ul><!-- list end -->
-                        </div>
-                    </div><!-- column end -->
-
-                    <!-- column start -->
-                    <div class="eight-columns column-100-100 padding-top-30">
-                        <p class="body-text-s anim-text-reveal js-scrollanim">Artisan wolf copper mug raw denim, green
-                            juice cardigan listicle paleo la croix live-edge four dollar toast sartorial mustache banh
-                            mi mlkshk. Hexagon hella four dollar toast +1 gentrify farm-to-table. IPhone franzen
-                            portland cardigan fixie blog. Brunch vinyl DIY crucifix taxidermy affogato cred selvage
-                            quinoa direct trade keytar sustainable shabby chic intelligentsia kombucha. Scenester paleo
-                            knausgaard organic kogi ramps asymmetrical schlitz hot chicken swag kale chips palo santo.
-                            Intelligentsia wolf gastropub, twee lomo small batch slow-carb. Blog shoreditch food truck
-                            aesthetic.</p>
-                    </div><!-- column end -->
-                </div><!-- flex-container end -->
-            </div><!-- padding-top-90 end -->
-        </div><!-- pos-rel end -->
-    </section><!-- how we do end -->
-
-    <!-- services start -->
-    <section class="pos-rel section-bg-light-2" data-midnight="black">
-        <!-- pos-rel start -->
-        <div class="pos-rel flex-min-height-100vh">
-            <!-- flex-container start -->
-            <div class="container flex-container padding-top-60 padding-bottom-120">
-                <!-- column start -->
-                <div class="five-columns column-100-100 padding-top-60">
-                    <div class="column-r-margin-40-999 js-scrollanim">
-                        <h2 class="headline-m text-color-black hidden-box">
-                            <span class="anim-slide">Our Services</span>
-                        </h2>
-                        <div class="margin-top-30 anim-fade tr-delay-02">
-                            <a href="#" class="skew-btn js-pointer-large">
-                                <span class="skew-btn__box">
-                                    <span class="skew-btn__content text-color-black">Contact Us</span>
-                                    <span class="skew-btn__arrow black"></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div><!-- column end -->
-
-                <!-- column start -->
-                <div class="seven-columns column-100-100 padding-top-60">
-                    <div class="js-scrollanim">
-                        <h3 class="headline-xxxs text-color-black hidden-box">
-                            <span class="anim-slide">Flexitarian Hella</span>
-                        </h3>
-                        <p class="body-text-s text-color-black margin-top-20 anim-text-reveal tr-dela02">Hot chicken
-                            coloring book cliche YOLO, crucifix kale chips swag hexagon raclette paleo next level
-                            austin. Pinterest lumbersexual forage chillwave godard pitchfork vexillologist deep v chia
-                            truffaut four dollar toast food truck meditation.</p>
-                    </div>
-
-                    <!-- accordion start -->
-                    <div class="accordion accordion_black-underline js-accordion padding-top-60">
-                        <!-- accordion__tab start -->
-                        <div class="accordion__tab js-accordion-tab">
-                            <div class="accordion__btn js-accordion-btn js-pointer-large">
-                                <h6
-                                    class="accordion__btn-title black-plus-icon headline-xxxxs text-color-black margin-top-bottom-20">
-                                    Web Development</h6>
-                            </div>
-                            <div class="accordion__content js-accordion-content">
-                                <p class="body-text-xs text-color-black">Pinterest lumbersexual forage chillwave godard
-                                    pitchfork vexillologist deep v chia truffaut four dollar toast food truck
-                                    meditation. Hot chicken coloring book cliche YOLO, crucifix kale chips swag hexagon
-                                    raclette paleo next level austin.<br><br>Hammock sriracha paleo, iPhone swag af
-                                    flexitarian hella pickled neutra pug. Trust fund chicharrones iPhone stumptown chia.
-                                    Godard 3 wolf moon tacos try-hard, raw denim locavore messenger bag portland. Blue
-                                    bottle hashtag schlitz etsy knausgaard, aesthetic tacos freegan lomo deep v fashion
-                                    axe.</p>
-                            </div>
-                        </div><!-- accordion__tab end -->
-
-                        <!-- accordion__tab start -->
-                        <div class="accordion__tab js-accordion-tab">
-                            <div class="accordion__btn js-accordion-btn js-pointer-large">
-                                <h6
-                                    class="accordion__btn-title black-plus-icon headline-xxxxs text-color-black margin-top-bottom-20">
-                                    Social Media Marketing</h6>
-                            </div>
-                            <div class="accordion__content js-accordion-content">
-                                <p class="body-text-xs text-color-black">Pinterest lumbersexual forage chillwave godard
-                                    pitchfork vexillologist deep v chia truffaut four dollar toast food truck
-                                    meditation. Hot chicken coloring book cliche YOLO, crucifix kale chips swag hexagon
-                                    raclette paleo next level austin.<br><br>Hammock sriracha paleo, iPhone swag af
-                                    flexitarian hella pickled neutra pug. Trust fund chicharrones iPhone stumptown chia.
-                                    Godard 3 wolf moon tacos try-hard, raw denim locavore messenger bag portland. Blue
-                                    bottle hashtag schlitz etsy knausgaard, aesthetic tacos freegan lomo deep v fashion
-                                    axe.</p>
-                            </div>
-                        </div><!-- accordion__tab end -->
-
-                        <!-- accordion__tab start -->
-                        <div class="accordion__tab js-accordion-tab">
-                            <div class="accordion__btn js-accordion-btn js-pointer-large">
-                                <h6
-                                    class="accordion__btn-title black-plus-icon headline-xxxxs text-color-black margin-top-bottom-20">
-                                    SEO Optimization</h6>
-                            </div>
-                            <div class="accordion__content js-accordion-content">
-                                <p class="body-text-xs text-color-black">Pinterest lumbersexual forage chillwave godard
-                                    pitchfork vexillologist deep v chia truffaut four dollar toast food truck
-                                    meditation. Hot chicken coloring book cliche YOLO, crucifix kale chips swag hexagon
-                                    raclette paleo next level austin.<br><br>Hammock sriracha paleo, iPhone swag af
-                                    flexitarian hella pickled neutra pug. Trust fund chicharrones iPhone stumptown chia.
-                                    Godard 3 wolf moon tacos try-hard, raw denim locavore messenger bag portland. Blue
-                                    bottle hashtag schlitz etsy knausgaard, aesthetic tacos freegan lomo deep v fashion
-                                    axe.</p>
-                            </div>
-                        </div><!-- accordion__tab end -->
-
-                        <!-- accordion__tab start -->
-                        <div class="accordion__tab js-accordion-tab">
-                            <div class="accordion__btn js-accordion-btn js-pointer-large">
-                                <h6
-                                    class="accordion__btn-title black-plus-icon headline-xxxxs text-color-black margin-top-bottom-20">
-                                    Digital Marketing</h6>
-                            </div>
-                            <div class="accordion__content js-accordion-content">
-                                <p class="body-text-xs text-color-black">Pinterest lumbersexual forage chillwave godard
-                                    pitchfork vexillologist deep v chia truffaut four dollar toast food truck
-                                    meditation. Hot chicken coloring book cliche YOLO, crucifix kale chips swag hexagon
-                                    raclette paleo next level austin.<br><br>Hammock sriracha paleo, iPhone swag af
-                                    flexitarian hella pickled neutra pug. Trust fund chicharrones iPhone stumptown chia.
-                                    Godard 3 wolf moon tacos try-hard, raw denim locavore messenger bag portland. Blue
-                                    bottle hashtag schlitz etsy knausgaard, aesthetic tacos freegan lomo deep v fashion
-                                    axe.</p>
-                            </div>
-                        </div><!-- accordion__tab end -->
-                    </div><!-- accordion end -->
-                </div><!-- column end -->
-            </div><!-- flex-container end -->
-        </div><!-- pos-rel end -->
-    </section><!-- services end -->
+    </section>
+    {% endfor %}
+    <!-- work process end -->
 </main><!-- main end -->
 
 

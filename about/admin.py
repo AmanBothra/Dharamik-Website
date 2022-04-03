@@ -4,7 +4,8 @@ from .models import (
     WhyChooseUsModel,
     Faq,
     FaqModel,
-    WhatWeDo
+    WhatWeDo,
+    WorkProcess,
 )
 
 admin.site.register(BannerImage)
@@ -19,3 +20,4 @@ class FaqAdmin(admin.ModelAdmin):
     inlines = [FaqInline,]
 
 admin.site.register(Faq, FaqAdmin)
+admin.site.register(WorkProcess)

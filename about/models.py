@@ -86,4 +86,24 @@ class WhatWeDo(BaseModel):
         super().clean()
         if not self.id and WhatWeDo.objects.exists():
             raise ValidationError('You cannot add more somethings.')
+        
 
+class WorkProcess(BaseModel):
+    
+    class Meta:
+        verbose_name_plural = "Work Process"
+        
+    step_one_title = models.CharField(_("Step One Title"), default="", max_length=50)
+    step_one_description = models.TextField(_("Step One Description"), max_length=500)
+    step_two_title = models.CharField(_("Step Two Title"), default="", max_length=50)
+    step_two_description = models.TextField(_("Step Two Description"), max_length=500)
+    step_three_title = models.CharField(_("Step Three Title"), default="", max_length=50)
+    step_three_description = models.TextField(_("Step Three Description"), max_length=500)
+    
+    def __str__(self):
+        return "Work Process"
+    
+    def clean(self):
+        super().clean()
+        if not self.id and WhyChooseUsModel.objects.exists():
+            raise ValidationError('You cannot add more somethings.')
