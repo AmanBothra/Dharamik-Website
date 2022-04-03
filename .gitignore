@@ -286,3 +286,4 @@ static/
 
 *.pyc
 *.whl
+migrations/

@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from base.models import (
     BaseModel,
@@ -101,6 +102,25 @@ class ProfitScreenshots(BaseModel):
             converter_to_webp(self.image)
 
         super().save(*args, **kwargs) 
+    
+class Performance(BaseModel):
+    
+    year = models.IntegerField(_("Performance Year"), default=2019)
+    
+    class Meta:
+        verbose_name_plural = "Monthly Performance"
+        
+    def __str__(self):
+        return self.year
+
+class PerformanceModel(BaseModel):
+     
+    year = models.ForeignKey(Performance, on_delete=models.CASCADE)
+    month = models.CharField(max_length=15, default="")
+    percentage = models.IntegerField(default=0)
+    
+    class Meta:
+        verbose_name_plural = "Monthly Performance"
         
 class FeaturedIn(BaseModel):
 

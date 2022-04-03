@@ -15,6 +15,8 @@ from .models import (
     BookImage,
     IntroVideo,
     Subscriber,
+    Performance,
+    PerformanceModel,
 )
 
 
@@ -73,5 +75,15 @@ class BookAdmin(admin.ModelAdmin):
 admin.site.register(RecommendedBooks, BookAdmin)
 admin.site.register(IntroVideo)
 admin.site.register(Subscriber)
+
+class PerformanceInline(admin.StackedInline):
+    model = PerformanceModel
+    extra = 1
+    max_num = 12
+
+class PerformanceAdmin(admin.ModelAdmin):
+    inlines = [PerformanceInline,]
+
+admin.site.register(Performance, PerformanceAdmin)
 
 

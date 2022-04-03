@@ -147,3 +147,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+
