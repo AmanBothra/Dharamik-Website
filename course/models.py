@@ -68,6 +68,17 @@ class Course(BaseModel):
     def __str__(self):
         return "Course Details"
 
+    def save(self, *args, **kwargs):
+        if self.one_million_image:
+            converter_to_webp(self.one_million_image)
+        if self.platinum_plus_image:
+            converter_to_webp(self.platinum_plus_image)
+        if self.platinum_image:
+            converter_to_webp(self.platinum_image)
+        if self.copymytrade_image:
+            converter_to_webp(self.copymytrade_image)
+        super().save(*args, **kwargs)
+
     def clean(self):
         super().clean()
         if not self.id and AboutCourse.objects.exists():

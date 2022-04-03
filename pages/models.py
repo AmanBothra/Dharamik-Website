@@ -105,12 +105,12 @@ class ProfitScreenshots(BaseModel):
     
 class Performance(BaseModel):
     
-    year = models.IntegerField(_("Performance Year"), default=2019)
+    year = models.IntegerField(_("Performance Year"), default=2019, unique=True)
     
     class Meta:
         verbose_name_plural = "Monthly Performance"
         
-    def __str__(self):
+    def __int__(self):
         return self.year
 
 class PerformanceModel(BaseModel):

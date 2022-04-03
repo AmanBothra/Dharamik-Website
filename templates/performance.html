@@ -1,0 +1,77 @@
+
+<!-- skills start -->
+<section class="pos-rel section-bg-light-1" data-midnight="black">
+	<!-- pos-rel start -->
+	<div class="pos-rel flex-min-height-100vh">
+		<!-- container start -->
+		<div class="container padding-top-bottom-120">
+			<h2 class="headline-xxs text-color-black hidden-box">
+				<span class="anim-slide js-scrollanim">Check Out Our Monthly Performance</span>
+			</h2>
+
+			<!-- flex-container start -->
+			<div class="flex-container padding-top-30">
+				<!-- column start -->
+				<div class="four-columns column-100-100 padding-top-60">
+					<div class="column-r-margin-40-999">
+						<!-- list start -->
+						<ul class="list list_margin-20px text-color-6d6d6d js-scrollanim">
+							<li class="list__item dot black hidden-box">
+								<button class="subhead-xs anim-slide" onclick="performance_fun(19)">2019</button>
+							</li>
+							<li class="list__item dot black hidden-box">
+								<button class="subhead-xs anim-slide tr-delay-01" onclick="performance_fun(20)">
+									2020
+								</button>
+							</li>
+							<li class="list__item dot black hidden-box">
+								<button class="subhead-xs anim-slide tr-delay-02" onclick="performance_fun(21)">
+									2021
+								</button>
+							</li>
+							<li class="list__item dot black hidden-box">
+								<button class="subhead-xs anim-slide tr-delay-03" onclick="performance_fun(22)">
+									2022
+								</button>
+							</li>
+
+						</ul>
+						<!-- list end -->
+					</div>
+				</div>
+				<!-- column end -->
+
+				<div class="eight-columns column-100-100 padding-top-60">
+
+					<ul class="list list_margin-20px padding-top-60 js-scrollanim">
+						<h1 class="profit_text">Performance</h1>
+						<h1 class="profit_texth1">20<span id="year_dgt">19</span></h1>
+						<!-- progress-box start -->
+						{% for obj in performance %}
+						<li class="list__item progress-bar y{{obj.year.year}} my_list">
+							<div class="headline-xxxxs text-color-6d6d6d anim-text-fill" data-text="{{obj.month}}">
+								{{obj.month}}
+							</div>
+							<div class="progress-bar__counter headline-xxxxs text-color-6d6d6d anim-text-fill tr-delay-02"
+								data-text="{{obj.percentage}}%">
+								{{obj.percentage}}%
+							</div>
+							<div class="progress-bar__lines-box black js-progress-animate-box" data-progress="97%">
+								<div class="progress-bar__line black js-progress-animate"></div>
+							</div>
+						</li>
+						{% endfor %}
+
+						<!-- progress-box end -->
+					</ul>
+					<!-- list end -->
+				</div>
+
+			</div>
+			<!-- flex-container end -->
+		</div>
+		<!-- container end -->
+	</div>
+	<!-- pos-rel end -->
+</section>
+<!-- skills end -->

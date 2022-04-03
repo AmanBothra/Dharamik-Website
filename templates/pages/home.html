@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
-
-{% block content %}
-
 {% load static %}
 
+{% block content %}
 
 <!-- navigation start -->
 
@@ -187,7 +185,8 @@
 	<!-- pos-rel end -->
 </section>
 
-<!-- image Sliders end  -->
+<!-- image Sliders end  -->	
+
 
 <!-- our creative team start  -->
 
@@ -508,10 +507,32 @@
 {% endfor %}
 <!-- Counts for clients and subscriber end -->
 
+<script>
+	function performance_fun(year) {
+		let year_dgt = document.getElementById('year_dgt')
+		year_dgt.innerHTML = year
 
-</body>
-<!-- footer start -->
+		let year_class = `y20${year}`
 
-<!-- footer end -->
+		let y_class = document.getElementsByClassName('my_list')
+		
+		for (let i=0; i<y_class.length; i++){
+			let elm = y_class[i]
+
+
+			if (elm.className.search(year_class) < 0){
+				elm.style.display = "none";
+			}
+			else{
+				elm.style.display = "block";
+			}
+			
+		}
+
+	}
+
+	performance_fun(19)
+</script>
 
 {% endblock %}
+

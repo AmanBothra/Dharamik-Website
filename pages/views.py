@@ -1,21 +1,18 @@
 from django.shortcuts import render
 from .models import(
+    Performance,
     VideoBanner,
     About,
     MembershipPerks,
     ProfitScreenshots,
     KeyPoints,
-    FeaturedIn,
     FeaturedInPhoto,
-    TestiminialPass,
     Testimonial,
-    Certificate,
     CertificateImage,
-    RecommendedBooks,
     BookImage,
     IntroVideo,
     Subscriber,
-    
+    PerformanceModel,
 )
 
 def home(request):
@@ -30,7 +27,13 @@ def home(request):
     books_image = BookImage.objects.all()
     intro = IntroVideo.objects.all()
     subscriber = Subscriber.objects.all()
+    performance = PerformanceModel.objects.all()
     
+    
+    print(performance.count())
+    
+    for i in performance:
+        print(i.month, '//', i.year.year)
     
     data = {
         'video_banner': video_banner,
@@ -44,6 +47,7 @@ def home(request):
         'books_image' : books_image,
         'intro' : intro,
         'subscriber' : subscriber,
+        'performance' : performance,
     }
     
     return render (request, 'pages/home.html', data)
