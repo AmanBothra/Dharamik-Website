@@ -1,1 +1,435 @@
-<h2>course</h2>
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- main start -->
+<main class="js-animsition-overlay" data-animsition-overlay="true">
+    <!-- page head start -->
+    <section id="up" class="pos-rel bg-img-cover" style="background-image:url({{obj.image.url}})">
+        <div class="bg-overlay-black"></div>
+        <!-- pos-rel start -->
+        <div class="pos-rel flex-min-height-100vh">
+            <div class="padding-top-bottom-120 container small after-preloader-anim">
+                <!-- title start -->
+                <h2 class="headline-xxxxl hidden-box">
+                    <span class="anim-slide">Our Courses</span>
+                </h2><!-- title end -->
+            </div>
+        </div><!-- pos-rel end -->
+    </section><!-- page head end -->
+
+</main><!-- main end -->
+
+<!-- about start -->
+<section id="down" class="pos-rel section-bg-dark-2">
+    <!-- pos-rel start -->
+    <div class="pos-rel flex-min-height-100vh">
+        <!-- container start -->
+        <div class="container padding-top-bottom-120">
+            <!-- flex-container start -->
+            <div class="flex-container padding-bottom-10">
+                <!-- column start -->
+                <div class="four-columns column-100-100 padding-bottom-20">
+                    <!-- title start -->
+                    <h2 class="headline-xxs js-scrollanim">
+                        <span class="hidden-box d-block">
+                            <span class="anim-slide">About Course</span>
+                        </span>
+                    </h2><!-- title end -->
+                </div><!-- column end -->
+
+                <!-- column start -->
+
+                {% for obj in about %}
+                <div class="eight-columns column-100-100 padding-bottom-20">
+                    <div class="column-l-margin-40-999">
+                        <p class="body-text-m anim-text-reveal js-scrollanim">{{obj.description}}</p>
+                    </div>
+                </div>
+                <!-- list start -->
+                <ul class="list list_row list_margin-20px padding-top-30">
+                    <li class="list__item">
+                        <a href="{{obj.url}}" class="border-btn js-pointer-large">
+                            <span class="border-btn__inner"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                                Download Our Catalouge</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- list end -->
+                {% endfor %}
+
+                <!-- column end -->
+            </div><!-- flex-container end -->
+
+
+        </div><!-- container end -->
+    </div><!-- pos-rel end -->
+</section><!-- about end -->
+
+<!-- courses start -->
+{% for obj in course %}
+<section id="courses" class="pos-rel section-bg-light-2" data-midnight="black">
+    <!-- pos-rel start -->
+    <div class="pos-rel padding-top-bottom-120">
+        <!-- title start -->
+        <h2 class="headline-xl text-color-black text-center hidden-box">
+            <span class="anim-slide js-scrollanim">Membership Course</span>
+        </h2><!-- title end -->
+
+        <!-- flex-container start -->
+        <div class="flex-container flex-align-center padding-top-60">
+            <!-- column start -->
+            <div class="five-columns column-50-100 padding-top-30">
+                <a href="{{obj.one_million_image.url}}"
+                    class="d-block anim-overlay js-scrollanim js-pointer-zoom js-photo-popup">
+                    <img src="{{obj.one_million_image.url}}"
+                        alt="course">
+                </a>
+            </div><!-- column end -->
+            <!-- column start -->
+            <div class="four-columns column-50-100 padding-top-30">
+                <div class="column-l-margin-20 anim-fade js-scrollanim">
+                    <div class="margin-left-right-20">
+                        <div class="margin-bottom-30">
+                            <h3 class="headline-xxxs text-color-black margin-top-5">
+                                One Million
+                            </h3>
+                            <p class="body-text-s text-color-black margin-top-20">
+                                {{obj.one_million_description}}
+                            </p>
+                        </div>
+                        <a href="course.html#pricing" class="skew-btn js-pointer-large">
+                            <span class="skew-btn__box">
+                                <span class="skew-btn__content text-color-black">Learn more</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- column end -->
+        </div><!-- flex-container end -->
+
+        <!-- flex-container start -->
+        <div class="flex-container reverse flex-align-center padding-top-60">
+            <!-- column start -->
+            <div class="three-offset four-columns column-50-100 padding-top-30">
+                <div class="column-r-margin-20 anim-fade js-scrollanim">
+                    <div class="margin-left-right-20">
+                        <div class="margin-bottom-30">
+                            <h3 class="headline-xxxs text-color-black margin-top-5">
+                                Platinum Plus
+                            </h3>
+                            <p class="body-text-s text-color-black margin-top-20">
+                                {{obj.platinum_plus_description}}
+                            </p>
+                        </div>
+                        <a href="course_details.html" class="skew-btn js-pointer-large">
+                            <span class="skew-btn__box">
+                                <span class="skew-btn__content text-color-black">Learn more</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- column end -->
+            <!-- column start -->
+            <div class="five-columns column-50-100 padding-top-30">
+                <a href="{{obj.platinum_plus_image.url}}"
+                    class="d-block anim-overlay js-scrollanim js-pointer-zoom js-photo-popup">
+                    <img src="{{obj.platinum_plus_image.url}}"
+                        alt="course">
+                </a>
+            </div><!-- column end -->
+        </div><!-- flex-container end -->
+
+        <!-- flex-container start -->
+        <div class="flex-container flex-align-center padding-top-60">
+            <!-- column start -->
+            <div class="five-columns column-50-100 padding-top-30">
+                <a href="{{obj.platinum_image.url}}"
+                    class="d-block anim-overlay js-scrollanim js-pointer-zoom js-photo-popup">
+                    <img src="{{obj.platinum_image.url}}"
+                        alt="course">
+                </a>
+            </div><!-- column end -->
+            <!-- column start -->
+            <div class="four-columns column-50-100 padding-top-30">
+                <div class="column-l-margin-20 anim-fade js-scrollanim">
+                    <div class="margin-left-right-20">
+                        <div class="margin-bottom-30">
+                            <h3 class="headline-xxxs text-color-black margin-top-5">
+                                Platinum
+                            </h3>
+                            <p class="body-text-s text-color-black margin-top-20">
+                                {{obj.platinum_description}}
+                            </p>
+                        </div>
+                        <a href="course_details.html" class="skew-btn js-pointer-large">
+                            <span class="skew-btn__box">
+                                <span class="skew-btn__content text-color-black">Learn more</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- column end -->
+        </div><!-- flex-container end -->
+
+        <!-- flex-container start -->
+        <div class="flex-container reverse flex-align-center padding-top-60">
+            <!-- column start -->
+            <div class="three-offset four-columns column-50-100 padding-top-30">
+                <div class="column-r-margin-20 anim-fade js-scrollanim">
+                    <div class="margin-left-right-20">
+                        <div class="margin-bottom-30">
+                            <h3 class="headline-xxxs text-color-black margin-top-5">
+                                Copy My Trade
+                            </h3>
+                            <p class="body-text-s text-color-black margin-top-20">
+                                {{obj.copymytrade_description}}
+                            </p>
+                        </div>
+                        <a href="course_details.html" class="skew-btn js-pointer-large">
+                            <span class="skew-btn__box">
+                                <span class="skew-btn__content text-color-black">Learn more</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- column end -->
+            <!-- column start -->
+            <div class="five-columns column-50-100 padding-top-30">
+                <a href="{{obj.copymytrade_image.url}}"
+                    class="d-block anim-overlay js-scrollanim js-pointer-zoom js-photo-popup">
+                    <img src="{{obj.copymytrade_image.url}}" alt="course">
+                </a>
+            </div><!-- column end -->
+        </div><!-- flex-container end -->
+    </div><!-- pos-rel end -->
+</section>
+{% endfor %}
+
+<!-- courses end -->
+
+<!-- pricing start -->
+<section class="pos-rel section-bg-dark-1" id="pricing">
+    <!-- pos-rel start -->
+    <div class="pos-rel padding-top-bottom-120">
+        <!-- title start -->
+        <h2 class="headline-xxl text-center hidden-box js-scrollanim">
+            <span class="anim-slide">
+                Our <span class="text-color-red">Pricing</span>
+            </span>
+        </h2>
+        <!-- title end -->
+
+        <!-- flex-container start -->
+        <div class="container small flex-container flex-justify-center padding-top-30">
+            <!-- column start -->
+            <div class="four-columns column-50-100 padding-top-60">
+                <div class="column-l-r-margin-10 price-top-offset content-bg-dark-2 border-radius-10px hidden-box">
+                    <div class="text-center content-bg-red">
+                        <h3 class="subhead-m padding-top-bottom-20">Paltinum</h3>
+                    </div>
+                    <h4 class="text-center padding-top-bottom-50">
+                        <span class="headline-l">₹40,495</span><br>
+                        <span class="subhead-xs">18 month</span>
+                    </h4>
+                    <!-- list start -->
+                    <ul
+                        class="list list_center list_margin-20px subhead-xxs text-color-b0b0b0 margin-left-right-20 padding-top-bottom-60">
+                        <li class="list__item check red">Signals</li>
+                        <li class="list__item check red">Live Training</li>
+                        <li class="list__item check red">Training Level</li>
+                        <li class="list__item check red">Training Access</li>
+                        <li class="list__item check red">Core Strategy</li>
+                        <li class="list__item check red">Portfolio Picks</li>
+                        <li class="list__item check red">Chart Reading</li>
+                        <li class="list__item check red">Commodities</li>
+                        <li class="list__item x opacity-05">TS21 Strategy</li>
+                        <li class="list__item x opacity-05">Option Hedging</li>
+                        <li class="list__item x opacity-05">Option Writing</li>
+                        <li class="list__item x opacity-05">Indicators</li>
+                        <li class="list__item x opacity-05">Scalping Strategy</li>
+                        <li class="list__item x opacity-05">Doubt counter</li>
+                        <li class="list__item x opacity-05">Zoom/video support</li>
+                    </ul>
+                    <!-- list end -->
+                    <div class="padding-top-bottom-30 text-center">
+                        <a href="#" class="ellipse-btn js-pointer-large">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- column end -->
+
+            <!-- column start -->
+            <div class="four-columns column-50-100 padding-top-60">
+                <div class="column-l-r-margin-10 content-bg-dark-2 border-radius-10px hidden-box">
+                    <div class="text-center content-bg-red">
+                        <h3 class="subhead-m padding-top-bottom-40">One Million</h3>
+                    </div>
+                    <h4 class="text-center padding-top-bottom-50">
+                        <span class="headline-l">₹74,495</span><br>
+                        <span class="subhead-xs">Lifetime</span>
+                    </h4>
+                    <!-- list start -->
+                    <ul
+                        class="list list_center list_margin-20px subhead-xxs text-color-b0b0b0 margin-left-right-20 padding-top-bottom-60">
+                        <li class="list__item check red">Signals</li>
+                        <li class="list__item check red">Live Training</li>
+                        <li class="list__item check red">Training Level</li>
+                        <li class="list__item check red">Training Access</li>
+                        <li class="list__item check red">Core Strategy</li>
+                        <li class="list__item check red">Portfolio Picks</li>
+                        <li class="list__item check red">Chart Reading</li>
+                        <li class="list__item check red">Commodities</li>
+                        <li class="list__item check red">TS21 Strategy</li>
+                        <li class="list__item check red">Option Hedging</li>
+                        <li class="list__item check red">Option Writing</li>
+                        <li class="list__item check red">Indicators</li>
+                        <li class="list__item check red">Scalping Strategy</li>
+                        <li class="list__item check red">Doubt counter</li>
+                        <li class="list__item check red">Zoom/video support</li>
+                    </ul>
+                    <!-- list end -->
+                    <div class="padding-top-bottom-50 text-center">
+                        <a href="#" class="ellipse-btn ellipse-btn_red js-pointer-large">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- column end -->
+
+            <!-- column start -->
+            <div class="four-columns column-50-100 padding-top-60">
+                <div class="column-l-r-margin-10 price-top-offset content-bg-dark-2 border-radius-10px hidden-box">
+                    <div class="text-center content-bg-red">
+                        <h3 class="subhead-m padding-top-bottom-20">Platinum Plus</h3>
+                    </div>
+                    <h4 class="text-center padding-top-bottom-50">
+                        <span class="headline-l">₹54,495</span><br>
+                        <span class="subhead-xs">Lifetime</span>
+                    </h4>
+                    <!-- list start -->
+                    <ul
+                        class="list list_center list_margin-20px subhead-xxs text-color-b0b0b0 margin-left-right-20 padding-top-bottom-60">
+                        <li class="list__item check red">Signals</li>
+                        <li class="list__item check red">Live Training</li>
+                        <li class="list__item check red">Training Level</li>
+                        <li class="list__item check red">Training Access</li>
+                        <li class="list__item check red">Core Strategy</li>
+                        <li class="list__item check red">Portfolio Picks</li>
+                        <li class="list__item check red">Chart Reading</li>
+                        <li class="list__item check red">Commodities</li>
+                        <li class="list__item check red">TS21 Strategy</li>
+                        <li class="list__item x opacity-05">Option Hedging</li>
+                        <li class="list__item x opacity-05">Option Writing</li>
+                        <li class="list__item check red">Indicators</li>
+                        <li class="list__item x opacity-05">Scalping Strategy</li>
+                        <li class="list__item check red">Doubt counter</li>
+                        <li class="list__item check red">Zoom/video support</li>
+                    </ul>
+                    <!-- list end -->
+                    <div class="padding-top-bottom-30 text-center">
+                        <a href="#" class="ellipse-btn js-pointer-large">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- column end -->
+        </div>
+        <!-- flex-container end -->
+    </div>
+    <!-- pos-rel end -->
+</section>
+<!-- pricing end -->
+
+{% for obj in event %}
+<!-- upcoming events start -->
+<section class="pos-rel section-bg-dark-1">
+    <!-- pos-rel start -->
+    <div class="pos-rel flex-min-height-100vh">
+        <!-- container start -->
+        <div class="container padding-top-bottom-120">
+            <!-- title start -->
+            <h2 class="headline-xxl text-center hidden-box">
+                <span class="anim-slide js-scrollanim">Upcoming Events</span>
+            </h2><!-- title end -->
+
+            <!-- flex-container start -->
+            <div class="flex-container padding-top-30">
+                <!-- column start -->
+                <div class="four-columns column-50-100 padding-top-60">
+                    <div class="column-r-margin-20 pos-rel">
+                        <span class="vertical-text pos-abs pos-left-top-0px">
+                            <span
+                                class="vertical-text__inner subhead-xs text-bg-red padding-top-bottom-5 padding-left-right-40">
+                                {{obj.date}}</span>
+                        </span>
+                        <div class="margin-left-50 anim-fade js-scrollanim">
+                            <h4 class="headline-xxxs">{{obj.name}}</h4>
+                            <p class="body-text-xs margin-top-20">{{obj.event_description}}</p>
+                            <ul class="list list_row list_margin-20px padding-top-20">
+                                <li class="list__item">
+                                    <a href="wa.me/9199097 77471" target="_blank" class="fill-btn js-pointer-large" data-text="Inquiry">Inquiry</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- column end -->
+            </div><!-- flex-container end -->
+        </div><!-- container end -->
+    </div><!-- pos-rel end -->
+</section>
+{% endfor %}
+
+<!-- upcoming events end -->
+
+<!-- Course Testimonial start -->
+{% for obj in testimonial %}
+<section class="pos-rel section-bg-light-1" data-midnight="black">
+    <!-- pos-rel start -->
+    <div class="pos-rel flex-min-height-100vh hidden-box">
+        <!-- width-100perc start -->
+        <div class="padding-top-bottom-120 width-100perc">
+            <!-- title start -->
+            <h2 class="headline-xl text-color-black text-center hidden-box">
+                <span class="anim-slide js-scrollanim">Course Testimonial</span>
+            </h2><!-- title end -->
+
+            <!-- js-3-view-slider start -->
+            <div class="js-3-view-slider padding-top-bottom-90 pos-rel margin-left-right-10">
+                <!-- swiper-wrapper start -->
+                <div class="swiper-wrapper js-slider-scroll-anim">
+                    <!-- swiper-slide start -->
+                    <div class="swiper-slide">
+                        <div
+                            class="margin-left-right-10 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
+                            <div class="margin-top-20 text-center">
+                                <span class="headline-xxxs text-color-black">{{obj.name}}</span><br>
+                            </div>
+                            <p class="margin-top-30 quote quote_top body-text-xs text-color-black">
+                                {{obj.testimonial}}
+                            </p>
+                        </div>
+                    </div><!-- swiper-slide end -->
+                </div><!-- swiper-wrapper end -->
+
+                <!-- swiper-button-prev start -->
+                <div class="swiper-button-prev-box">
+                    <div class="swiper-button-prev black"></div>
+                </div><!-- swiper-button-prev end -->
+                <!-- swiper-button-next start -->
+                <div class="swiper-button-next-box">
+                    <div class="swiper-button-next black"></div>
+                </div><!-- swiper-button-next end -->
+
+                <!-- swiper-pagination start -->
+                <div class="pagination-box">
+                    <div class="swiper-pagination counter-pagination black"></div>
+                </div><!-- swiper-pagination end -->
+            </div><!-- js-3-view-slider end -->
+        </div><!-- width-100perc end -->
+    </div><!-- pos-rel end -->
+</section>
+{% endfor %}
+
+<!-- Course Testimonia end -->
+
+{% endblock %}

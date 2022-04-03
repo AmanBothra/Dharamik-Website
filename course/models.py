@@ -37,6 +37,7 @@ class AboutCourse(BaseModel):
 
     title = models.CharField(_("Title"), default="", max_length=50)
     description = RichTextField()
+    url = models.URLField(_("Catalouge Download Url"))
 
     def __str__(self):
         return self.title
@@ -51,9 +52,17 @@ class Course(BaseModel):
     class Meta:
         verbose_name = "Course Details"
         
+    one_million_image = models.FileField(upload_to="course",
+        validators=get_image_file_extension_validator())
     one_million_description = RichTextField()
+    platinum_plus_image = models.FileField(upload_to="course",
+        validators=get_image_file_extension_validator())
     platinum_plus_description = RichTextField()
+    platinum_image = models.FileField(upload_to="course",
+        validators=get_image_file_extension_validator())
     platinum_description = RichTextField()
+    copymytrade_image = models.FileField(upload_to="course",
+        validators=get_image_file_extension_validator())
     copymytrade_description = RichTextField()
 
     def __str__(self):
